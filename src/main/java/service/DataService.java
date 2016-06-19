@@ -9,7 +9,7 @@ import java.util.Set;
 
 public interface DataService {
 
-    public boolean persist (String problem);
+    boolean persist(String problem);
 
-    public Set<String> getRandomData();
+    Set<String> getRandomData();
 }
