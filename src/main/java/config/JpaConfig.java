@@ -1,5 +1,6 @@
 package config;
 
+import com.example.Application;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.hibernate.cfg.Environment;
@@ -14,6 +15,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.TransactionManagementConfigurer;
 
+import javax.sql.DataSource;
 import java.util.Properties;
 
 /**
@@ -23,7 +25,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories
+@EnableJpaRepositories (basePackageClasses = Application.class)
 public class JpaConfig implements TransactionManagementConfigurer {
 
     @Value("${dataSource.driverClassName}")
@@ -41,11 +43,8 @@ public class JpaConfig implements TransactionManagementConfigurer {
     @Value("${hibernate.dialect}")
     private String dialect;
 
-    @Value("${hibernate.hbm2ddl.auto}")
-    private String hbm2ddlAuto;
-
     @Bean
-    public HikariDataSource configureDataSource() {
+    public DataSource configureDataSource() {
         HikariConfig config = new HikariConfig();
         config.setDriverClassName(driver);
         config.setJdbcUrl(url);
@@ -56,16 +55,15 @@ public class JpaConfig implements TransactionManagementConfigurer {
     }
 
     @Bean
-    public LocalContainerEntityManagerFactoryBean containerEntityManagerFactory() {
-        LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new
-                LocalContainerEntityManagerFactoryBean();
+    public LocalContainerEntityManagerFactoryBean configureEntityManagerFactory() {
+        LocalContainerEntityManagerFactoryBean entityManagerFactoryBean =
+                new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(configureDataSource());
-        entityManagerFactoryBean.setPackagesToScan("com.example");
+        entityManagerFactoryBean.setPackagesToScan("com.demo");
         entityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
 
         Properties jpaProperties = new Properties();
-        jpaProperties.put(Environment.DIALECT, dialect);
-        jpaProperties.put(Environment.HBM2DDL_AUTO, hbm2ddlAuto);
+        jpaProperties.put(org.hibernate.cfg.Environment.DIALECT, dialect);
         entityManagerFactoryBean.setJpaProperties(jpaProperties);
 
         return entityManagerFactoryBean;
