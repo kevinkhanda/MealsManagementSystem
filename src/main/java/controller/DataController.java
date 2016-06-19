@@ -3,6 +3,7 @@ package controller;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,6 +21,8 @@ import java.util.Set;
  * Controller with two methods for saving data and for sending random data to client.
  * It has exception handler only as a template. Should be improved for future execution.
  */
+
+@Controller
 public class DataController extends ControllerExceptionHandler {
 
     private static final Logger log = Logger.getLogger(DataController.class);

@@ -3,7 +3,6 @@ package config;
 import com.example.Application;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
-import org.hibernate.cfg.Environment;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -31,7 +30,7 @@ public class JpaConfig implements TransactionManagementConfigurer {
     @Value("${dataSource.driverClassName}")
     private String driver;
 
-    @Value("${dataSource.url")
+    @Value("${dataSource.url}")
     private String url;
 
     @Value("${dataSource.username}")
@@ -59,7 +58,7 @@ public class JpaConfig implements TransactionManagementConfigurer {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean =
                 new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(configureDataSource());
-        entityManagerFactoryBean.setPackagesToScan("com.demo");
+        entityManagerFactoryBean.setPackagesToScan("com.example");
         entityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
 
         Properties jpaProperties = new Properties();
