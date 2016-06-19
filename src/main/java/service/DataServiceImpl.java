@@ -13,7 +13,7 @@ import java.util.UUID;
 
 /**
  * Created by Kevin Khanda on 6/19/2016.
- * Class that impements DataService that separate business logic of application with DBMS logic.
+ * Class that implements DataService that separate business logic of application with DBMS logic.
  */
 @Service("dataService")
 public class DataServiceImpl implements DataService {
