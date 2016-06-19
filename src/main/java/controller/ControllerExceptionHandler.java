@@ -1,9 +1,10 @@
-package utils;
+package controller;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
+import utils.RestException;
 
 /**
  * Created by Kevin Khanda on 6/19/2016.
