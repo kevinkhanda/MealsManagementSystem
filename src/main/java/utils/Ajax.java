@@ -9,7 +9,7 @@ import java.util.Map;
  */
 public class Ajax {
 
-    public static Map<String, Object> successResponce(Object object) {
+    public static Map<String, Object> successResponse(Object object) {
         Map<String, Object> response = new HashMap<>();
         response.put("result", "success");
         response.put("data", object);

@@ -49,7 +49,17 @@ public class DataController extends ControllerExceptionHandler {
     Map<String, Object> getRandomData() throws RestException {
         try {
             Set<String> result = dataService.getRandomData();
-            return Ajax.successResponce(result);
+            return Ajax.successResponse(result);
+        } catch (Exception e) {
+            throw new RestException(e);
+        }
+    }
+
+    @RequestMapping(value = "/error", method = RequestMethod.TRACE)
+    public @ResponseBody
+    Map<String, Object> getErrorMessage() throws RestException {
+        try {
+            return Ajax.errorResponse("Some kind of error");
         } catch (Exception e) {
             throw new RestException(e);
         }
