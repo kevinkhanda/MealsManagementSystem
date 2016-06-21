@@ -42,6 +42,13 @@ public class JpaConfig implements TransactionManagementConfigurer {
     @Value("${hibernate.dialect}")
     private String dialect;
 
+    /*
+    Will have value "update" in properties so that DataBase will always update
+    hbm2ddl also has value "create" which always drops previous DataBase and creates new
+     */
+    @Value("${hibernate.hbm2ddl.auto}")
+    private String hbm2ddlAuto;
+
     @Bean
     public DataSource configureDataSource() {
         HikariConfig config = new HikariConfig();
@@ -63,6 +70,7 @@ public class JpaConfig implements TransactionManagementConfigurer {
 
         Properties jpaProperties = new Properties();
         jpaProperties.put(org.hibernate.cfg.Environment.DIALECT, dialect);
+        jpaProperties.put(org.hibernate.cfg.Environment.HBM2DDL_AUTO, hbm2ddlAuto);
         entityManagerFactoryBean.setJpaProperties(jpaProperties);
 
         return entityManagerFactoryBean;
