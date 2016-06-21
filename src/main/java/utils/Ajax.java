@@ -22,7 +22,7 @@ public class Ajax {
         return response;
     }
 
-    public static Map<String, Object> errorResponse(String errorMessage){
+    public static Map<String, Object> errorResponse(String errorMessage) {
         Map<String, Object> response = new HashMap<>();
         response.put("result", "error");
         response.put("message", errorMessage);

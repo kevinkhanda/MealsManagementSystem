@@ -31,7 +31,8 @@ public class DataController extends ControllerExceptionHandler {
     private DataService dataService;
 
     @RequestMapping(value = "/persist", method = RequestMethod.POST)
-    public @ResponseBody
+    public
+    @ResponseBody
     Map<String, Object> persist(@RequestParam("data") String data) throws RestException {
         try {
             if (data == null || data.equals("")) {
@@ -45,21 +46,12 @@ public class DataController extends ControllerExceptionHandler {
     }
 
     @RequestMapping(value = "/getRandomData", method = RequestMethod.GET)
-    public @ResponseBody
+    public
+    @ResponseBody
     Map<String, Object> getRandomData() throws RestException {
         try {
             Set<String> result = dataService.getRandomData();
             return Ajax.successResponse(result);
-        } catch (Exception e) {
-            throw new RestException(e);
-        }
-    }
-
-    @RequestMapping(value = "/error", method = RequestMethod.TRACE)
-    public @ResponseBody
-    Map<String, Object> getErrorMessage() throws RestException {
-        try {
-            return Ajax.errorResponse("Some kind of error");
         } catch (Exception e) {
             throw new RestException(e);
         }
