@@ -28,7 +28,7 @@ public class DataRepositoryImpl implements DataRepository<Data> {
         Object[] params = new Object[] {object.getId(), object.getDescription()};
         int[] types = new int[] {Types.VARCHAR, Types.VARCHAR};
 
-        jdbcOperations.update("INSERT INTO MyApp_Data(\n" +
+        jdbcOperations.update("INSERT INTO myapp(\n" +
                 " data_id, data_description)\n" +
                 " VALUES (cast(? as UUID), ?);", params, types);
     }
@@ -39,7 +39,7 @@ public class DataRepositoryImpl implements DataRepository<Data> {
      */
     @Override
     public void delete(Data object) {
-        jdbcOperations.update("DELETE FROM MyApp_Data\n" +
+        jdbcOperations.update("DELETE FROM myapp\n" +
                 "WHERE data_id = '" + object.getId().toString() + "';");
     }
 
@@ -47,7 +47,7 @@ public class DataRepositoryImpl implements DataRepository<Data> {
     public Set<String> getRandomData() {
         Set<String> result = new HashSet<>();
         SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT data_description" +
-                "FROM MyApp_Data p ORDER BY RANDOM() LIMIT 50;");
+                "FROM myapp p ORDER BY RANDOM() LIMIT 50;");
         while (rowSet.next()) {
             result.add(rowSet.getString("data_description"));
         }

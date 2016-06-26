@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import repository.DataRepository;
+import repository.DataRepositoryImpl;
 
 import java.util.Set;
 import java.util.UUID;
@@ -22,7 +23,7 @@ public class DataServiceImpl implements DataService {
 
     @Autowired
     @Qualifier("dataRepository")
-    private DataRepository<Data> dataRepository;
+    private DataRepositoryImpl dataRepository;
 
     @Override
     public boolean persist(String problem) {

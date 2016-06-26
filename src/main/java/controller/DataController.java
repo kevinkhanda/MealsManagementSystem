@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import service.DataService;
+import service.DataServiceImpl;
 import utils.Ajax;
 import utils.RestException;
 
@@ -28,7 +28,7 @@ public class DataController extends ControllerExceptionHandler {
 
     @Autowired
     @Qualifier("dataService")
-    private DataService dataService;
+    private DataServiceImpl dataService;
 
     @RequestMapping(value = "/persist", method = RequestMethod.POST)
     public
