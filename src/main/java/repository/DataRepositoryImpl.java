@@ -30,7 +30,7 @@ public class DataRepositoryImpl implements DataRepository<Data> {
 
         jdbcOperations.update("INSERT INTO myapp(\n" +
                 " data_id, data_description)\n" +
-                " VALUES (cast(? as UUID), ?);", params, types);
+                " VALUES (?, ?);", params, types);
     }
 
     /**
@@ -47,7 +47,7 @@ public class DataRepositoryImpl implements DataRepository<Data> {
     public Set<String> getRandomData() {
         Set<String> result = new HashSet<>();
         SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT data_description" +
-                "FROM myapp p ORDER BY RANDOM() LIMIT 50;");
+                "FROM myapp ORDER BY RANDOM() LIMIT 50;");
         while (rowSet.next()) {
             result.add(rowSet.getString("data_description"));
         }
