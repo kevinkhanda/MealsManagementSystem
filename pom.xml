@@ -53,7 +53,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -71,10 +71,10 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>$(basedir)/target/classes/static</outputDirectory>
+							<outputDirectory>${basedir}/target/classes/static</outputDirectory>
 							<resources>
 								<resource>
-									<directory>src/main/webapps</directory>
+									<directory>${basedir}/src/main/webapp</directory>
 									<filtering>true</filtering>
 								</resource>
 							</resources>
@@ -84,5 +84,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
