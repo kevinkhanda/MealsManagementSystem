@@ -10,6 +10,7 @@ import utils.RestException;
  * Created by Kevin Khanda on 6/19/2016.
  * This class will handle special type of exception.
  */
+
 @Controller
 public class ControllerExceptionHandler {
 
