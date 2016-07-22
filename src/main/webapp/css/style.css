@@ -1,0 +1,406 @@
+html {
+    overflow: scroll;
+}
+
+body {
+	background: url(/img/fon33.png) no-repeat center center fixed;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top: 49px;
+}
+
+#myModal {
+	width:400px;
+	height:306px;
+}
+
+.btn {
+	border-radius: 0;
+}
+
+#btn-primary {
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+#inn {
+	color: #419641;
+}
+
+.forgot {
+	margin-right: 5px;
+	color:#419641;
+}
+
+.forgot:hover {
+	margin-right: 5px;
+	color:#419641;
+}
+
+#logo {
+	position: absolute;
+	margin-left:-10px;
+	margin-top: -3px;
+}
+
+.navbar-brand {
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+#main {
+	background-color: #fff;
+	border-radius: 4px;
+}
+
+#page {
+	padding-left:15px;
+	padding-right: 15px;
+	padding-top: 15px;
+	padding-bottom: 3px;
+}
+
+/*
+Carousel
+*/
+
+#menujumbo{
+	background: url(/img/eda.png) center;
+	color:#fff;
+}
+
+#planjumbo {
+	background: url(/img/calendar.png) center;
+	color:#fff;
+}
+
+#jumbo {
+	text-align: center;
+}
+/*
+End of carousel
+*/
+
+#scrollup {
+	width:55px;
+	height:55px;
+	position:fixed;
+	opacity:0.3;
+	bottom:50px;
+	right:50px;
+	display:none;
+	text-indent:-9999px;
+	background: url(/img/scroll4.png) no-repeat;
+}
+
+#scrollup:hover {
+	width:55px;
+	height:55px;
+	position:fixed;
+	opacity:1;
+	bottom:50px;
+	right:50px;
+	display:none;
+	text-indent:-9999px;
+	background: url(/img/scroll4.png) no-repeat;
+}
+
+/*
+User info in navbar
+*/
+
+.userlogo {
+	margin-top: 5px;
+}
+
+.username {
+	margin-top: 5px;
+	color: #fff;
+	font-size: 14px;
+}
+
+
+.sett {
+	
+}
+
+.sett:hover {
+	opacity: 0.8;
+}
+
+.lout {
+
+}
+
+.lout:hover {
+	opacity: 0.8;
+}
+
+
+.navcont {
+
+  	margin-right: auto;
+  	margin-left: auto;
+}
+
+@media (min-width: 1215px) {
+  .navcont {
+    width: 1185px;
+  }
+}
+/*
+End of user info
+*/
+
+/*
+News block
+*/
+
+.line {
+	color: #419641;
+ 	background-color: #419641;
+ 	height: 1px;
+ 	width:50%;
+}
+
+.newshead {
+	text-align: center;
+	color:#419641;
+}
+
+.newsblock {
+
+}
+
+.imgblock {
+	padding-left: 70px;
+}
+
+.headblock {
+	padding-right: 70px;
+	font-size: 28px;
+	font-weight: 600;
+}
+
+.textblock {
+	padding-right: 70px;
+	font-size: 18px;
+	margin-top: 20px;
+}
+
+.headblock-mobile {
+	font-size: 20px;
+	font-weight: 600;
+	margin-top: 10px;
+}
+
+.textblock-mobile {
+	font-size: 12px;
+	margin-top: 20px;
+}
+
+.imgblock-mobile {
+	text-align: center;
+}
+
+/*
+End of newsblock
+*/
+
+
+/*
+Settings page
+*/
+
+.settlogo {
+	border: 2px solid #419641;
+}
+
+.settname {
+	font-size: 45px;
+}
+
+.settrow {
+	margin-left: 15px;
+	margin-top: 15px;
+}
+
+.settmail {
+	font-size: 25px;
+	color: #474747;
+	font-style: italic;
+	margin-top: -10px;
+}
+
+.settup {
+	margin-top: 50px;
+	font-size: 15px;
+}
+
+.sett-line {
+	color: #419641;
+ 	background-color: #419641;
+ 	height: 1px;
+ 	width:35%;
+ 	text-align: left;
+ 	margin-left: 135px;
+	margin-top: 15px;
+}
+
+.sett-tele {
+	font-size: 30px;
+	margin-left: 70px;
+}
+
+.sett-tele2 {
+	margin-left: 72px;
+	margin-top: 30px;
+}
+
+input[type="radio"] {
+     display: none;
+
+}
+
+input[type="radio"] + label span {
+     display:inline-block;
+     width:24px;
+     height:24px;
+     margin:-1px 4px 0 0;
+     vertical-align:middle;
+     background:url(/img/radio4.png) left top no-repeat;
+     cursor:pointer;
+}
+
+input[type="radio"]:checked + label span {
+     background:url(/img/radio5.png) top no-repeat;
+}
+
+input[type="radio"]:disabled + label span {
+     background:url(/img/radio1.png) top no-repeat;
+     cursor:not-allowed;
+}
+
+input[type="checkbox"] {
+     display: none;
+}
+
+input[type="checkbox"] + label span {
+     display:inline-block;
+     width:24px;
+     height:24px;
+     margin:-1px 4px 0 0;
+     vertical-align:middle;
+     background:url(img/checkbox1.png) left top no-repeat;
+     cursor:pointer;
+}
+
+input[type="checkbox"]:checked + label span {
+     background:url(img/checkbox3.png) top no-repeat;
+}
+
+input[type="checkbox"]:disabled + label span {
+     background:url(/img/checkbox2.png) top no-repeat;
+     cursor:not-allowed;
+}
+
+.rad2 {
+	margin-left: 50px;
+}
+
+.nicktele {
+	margin-top: -6px;
+	margin-left: 20px;
+}
+
+.nicktele2 {
+	margin-top: -6px;
+}
+
+.planheader {
+	font-size: 30px;
+}
+
+.checkb {
+	margin-top: 25px;
+}
+
+
+.amofd {
+	font-size: 20px;
+}
+
+.err {
+	font-size: 17px;
+	font-style: italic;
+	color: #474747;
+}
+
+.plansett {
+	margin-left: 70px;
+}
+
+.logomob {
+	text-align: center;
+}
+
+.settnamemob {
+	font-size: 35px;
+}
+
+.settmailmob {
+	font-size: 20px;
+	color: #474747;
+	font-style: italic;
+	margin-top: -10px;
+}
+
+.settupmob {
+	margin-top: 30px;
+	font-size: 15px;
+}
+
+.sett-linemob {
+	color: #419641;
+ 	background-color: #419641;
+ 	height: 1px;
+ 	width:75%;
+ 	text-align: left;
+	margin-top: 10px;
+}
+
+.sett-telemob {
+	font-size: 25px;
+}
+
+.sett-telemob2 {
+	margin-top: 30px;
+}
+
+.planheadermob {
+	font-size: 25px;
+}
+
+.errmob {
+	font-size: 15px;
+	font-style: italic;
+	color: #474747;
+}
+
+.radmob {
+	padding-right: 30px;
+}
+
+.radmob2 {
+	padding-right: 10px;
+}
+
+.nickmob {
+	margin-top: -6px;
+}
+
+/*
+End of Settings page
+*/
