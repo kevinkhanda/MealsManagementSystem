@@ -1,25 +1,27 @@
 package entity;
 
+import java.math.BigInteger;
+
 /**
  * Created by Kevin Khanda on 7/23/2016.
- * Represents Role entity from a database.
- * Getters and Setters included.
+ * Represent Event entity from database.
  */
-public class Role implements DomainObject {
+public class Event implements DomainObject {
 
-    private int id;
+    private BigInteger id;
     private String name;
 
-    public Role (int id, String name) {
+    public Event(BigInteger id, String name) {
+
         this.id = id;
         this.name = name;
     }
 
-    public int getId() {
+    public BigInteger getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(BigInteger id) {
         this.id = id;
     }
 

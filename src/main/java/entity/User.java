@@ -9,48 +9,48 @@ import java.math.BigInteger;
  */
 public class User implements DomainObject {
 
-    private BigInteger userId;
-    private String userName;
+    private BigInteger id;
+    private String name;
     private String lastName;
     private String fatherName;
-    private String userOrganisation;
+    private String organisation;
     private String phone;
-    private String userEmail;
+    private String email;
     private String login;
     private String password;
 
-    // Ask Amira about roles and then decide how to set it here.
+    // Ask Almira about roles and then decide how to set it here.
     private int roleId;
 
-    public User(BigInteger userId, String userName, String lastName, String fatherName,
-                String userOrganisation, String phone, String userEmail, String login, String password, int roleId) {
+    public User(BigInteger id, String name, String lastName, String fatherName,
+                String organisation, String phone, String email, String login, String password, int roleId) {
 
-        this.userId = userId;
-        this.userName = userName;
+        this.id = id;
+        this.name = name;
         this.lastName = lastName;
         this.fatherName = fatherName;
-        this.userOrganisation = userOrganisation;
+        this.organisation = organisation;
         this.phone = phone;
-        this.userEmail = userEmail;
+        this.email = email;
         this.login = login;
         this.password = password;
         this.roleId = roleId;
     }
 
-    public BigInteger getUserId() {
-        return userId;
+    public BigInteger getId() {
+        return id;
     }
 
-    public void setUserId(BigInteger userId) {
-        this.userId = userId;
+    public void setId(BigInteger id) {
+        this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getName() {
+        return name;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getLastName() {
@@ -69,12 +69,12 @@ public class User implements DomainObject {
         this.fatherName = fatherName;
     }
 
-    public String getUserOrganisation() {
-        return userOrganisation;
+    public String getOrganisation() {
+        return organisation;
     }
 
-    public void setUserOrganisation(String userOrganisation) {
-        this.userOrganisation = userOrganisation;
+    public void setOrganisation(String organisation) {
+        this.organisation = organisation;
     }
 
     public String getPhone() {
@@ -85,12 +85,12 @@ public class User implements DomainObject {
         this.phone = phone;
     }
 
-    public String getUserEmail() {
-        return userEmail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
