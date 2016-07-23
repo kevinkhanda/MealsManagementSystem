@@ -17,4 +17,5 @@ public interface DataRepository<V extends DomainObject> {
 
     Set<String> getRandomData();
 
+    void update(V object);
 }

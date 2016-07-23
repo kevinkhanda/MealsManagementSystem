@@ -55,4 +55,9 @@ public class DataRepositoryImpl implements DataRepository<Data> {
         }
         return result;
     }
+
+    @Override
+    public void update(Data object) {
+
+    }
 }
