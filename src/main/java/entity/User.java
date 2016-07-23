@@ -1,7 +1,5 @@
 package entity;
 
-import java.math.BigInteger;
-
 /**
  * Created by Kevin Khanda on 7/23/2016.
  * Entity that represents user data from a database.
@@ -9,7 +7,7 @@ import java.math.BigInteger;
  */
 public class User implements DomainObject {
 
-    private BigInteger id;
+    private int id;
     private String name;
     private String lastName;
     private String fatherName;
@@ -18,12 +16,13 @@ public class User implements DomainObject {
     private String email;
     private String login;
     private String password;
+    private String tgAlias;
 
     // Ask Almira about roles and then decide how to set it here.
     private int roleId;
 
-    public User(BigInteger id, String name, String lastName, String fatherName,
-                String organisation, String phone, String email, String login, String password, int roleId) {
+    public User(int id, String name, String lastName, String fatherName, String organisation,
+                String phone, String email, String login, String password, String tgAlias, int roleId) {
 
         this.id = id;
         this.name = name;
@@ -34,14 +33,15 @@ public class User implements DomainObject {
         this.email = email;
         this.login = login;
         this.password = password;
+        this.tgAlias = tgAlias;
         this.roleId = roleId;
     }
 
-    public BigInteger getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(BigInteger id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -115,5 +115,13 @@ public class User implements DomainObject {
 
     public void setRoleId(int roleId) {
         this.roleId = roleId;
+    }
+
+    public String getTgAlias() {
+        return tgAlias;
+    }
+
+    public void setTgAlias(String tgAlias) {
+        this.tgAlias = tgAlias;
     }
 }
