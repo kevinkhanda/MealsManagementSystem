@@ -2,6 +2,7 @@ package entity;
 
 /**
  * Created by Kevin Khanda on 7/23/2016.
+ * Represents Terminal entity from Database.
  */
 public class Terminal implements DomainObject {
 

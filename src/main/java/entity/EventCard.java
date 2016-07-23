@@ -2,7 +2,7 @@ package entity;
 
 /**
  * Created by Kevin Khanda on 7/23/2016.
- * Represents Event Card entity from database.
+ * Represents Event_Card entity from database.
  */
 public class EventCard implements DomainObject {
 
