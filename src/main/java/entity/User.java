@@ -1,5 +1,7 @@
 package entity;
 
+import java.io.File;
+
 /**
  * Created by Kevin Khanda on 7/23/2016.
  * Entity that represents user data from a database.
@@ -17,6 +19,7 @@ public class User implements DomainObject {
     private String login;
     private String password;
     private String tgAlias;
+    private File photo;
 
     // Ask Almira about roles and then decide how to set it here.
     private int roleId;
@@ -123,5 +126,13 @@ public class User implements DomainObject {
 
     public void setTgAlias(String tgAlias) {
         this.tgAlias = tgAlias;
+    }
+
+    public File getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(File photo) {
+        this.photo = photo;
     }
 }

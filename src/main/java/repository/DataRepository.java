@@ -2,20 +2,29 @@ package repository;
 
 import entity.DomainObject;
 
+import java.io.File;
 import java.util.Set;
 
 /**
  * Created by Kevin Khanda on 6/19/2016.
- * Interface for collecting data from DB.
+ * Interface with methods for receiving data from database.
  */
 
 public interface DataRepository<V extends DomainObject> {
 
-    void persist (V object);
+    Set<String> getUserName(V object);
 
-    void delete (V object);
+    Set<String> getUserEmail(V object);
 
-    Set<String> getRandomData();
+    File getUserPhoto (V object);
 
-    void update(V object);
+    // Think about data structure for history of activations
+
+    File getMenu(V object);
+
+    // Think about data structure for news
+
+    void addNews(V object);
+
+    // Storing user info
 }
