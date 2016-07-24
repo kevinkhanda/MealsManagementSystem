@@ -37,6 +37,7 @@ public class NewsRepositoryImpl implements NewsRepository<News> {
         return result;
     }
 
+    // I may have problems with binary files and its decoding.
     @Override
     public File getNewsPhoto(News object) {
         File result;
