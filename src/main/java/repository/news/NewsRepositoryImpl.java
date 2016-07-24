@@ -1,63 +1,58 @@
 package repository.news;
 
-import entity.Data;
+import entity.News;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
+import java.io.File;
 import java.sql.*;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Created by Kevin Khanda on 6/19/2016.
  * Class for implementation of interface NewsRepository.
  */
-@org.springframework.stereotype.Repository("dataRepository")
-public class NewsRepositoryImpl implements NewsRepository<Data> {
+@org.springframework.stereotype.Repository("newsRepository")
+public class NewsRepositoryImpl implements NewsRepository<News> {
 
     @Autowired
     protected JdbcOperations jdbcOperations;
 
-    /**
-     * Adding data into DataBase.
-     * @param object that consists of Id and Description
-     */
+    // As before, three methods for showing data and one for adding.
     @Override
-    public void persist(Data object) {
-
-        Object[] params = new Object[] {object.getId(), object.getDescription()};
-        int[] types = new int[] {Types.VARCHAR, Types.VARCHAR};
-
-        jdbcOperations.update("INSERT INTO myapp(\n" +
-                "       data_id, data_description)\n" +
-                "   VALUES (cast(? as UUID), ?);", params, types);
-    }
-
-    /**
-     * Deletes given data from DataBase (by ID).
-     * @param object just for receiving ID
-     */
-    @Override
-    public void delete(Data object) {
-        jdbcOperations.update("DELETE FROM myapp\n" +
-                "WHERE data_id = '" + object.getId().toString() + "';");
-    }
-
-    @Override
-    public Set<String> getRandomData() {
-        Set<String> result = new HashSet<>();
-        SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT data_id, data_description" +
-                "FROM myapp" +
-                "WHERE data_description = 'Kevin';");
-        while (rowSet.next()) {
-            result.add(rowSet.getString("data_description"));
-        }
+    public String getNewsName(News object) {
+        String result;
+        SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT name FROM news" +
+                "WHERE id = ?;", object.getId());
+        result = rowSet.getString("name");
         return result;
     }
 
     @Override
-    public void update(Data object) {
+    public String getNewsDescription(News object) {
+        String result;
+        SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT description FROM news" +
+                "WHERE id = ?;", object.getId());
+        result = rowSet.getString("description");
+        return result;
+    }
 
+    @Override
+    public File getNewsPhoto(News object) {
+        File result;
+        SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT photo FROM news" +
+                "WHERE id = ?;", object.getId());
+        result = (File) rowSet.getObject("photo");
+        return result;
+    }
+
+    @Override
+    public void addNews(News object) {
+        Object[] params = new Object[] {object.getId(), object.getName(), object.getDescription(),
+            object.getPhoto()};
+        int[] types = new int[] {Types.INTEGER, Types.VARCHAR, Types.VARCHAR, Types.BLOB};
+
+        jdbcOperations.update("INSERT INTO news (id, name, description, photo)" +
+                "VALUES (?, ?, ?, ?);", params, types);
     }
 }
