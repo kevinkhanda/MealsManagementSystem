@@ -13,6 +13,7 @@ import java.sql.Types;
  * Created by Kevin Khanda on 7/24/2016.
  * Class that implements methods from interface MenuRepository
  */
+@org.springframework.stereotype.Repository("menuRepository")
 public class MenuRepositoryImpl implements MenuRepository<Menu>{
 
     @Autowired
