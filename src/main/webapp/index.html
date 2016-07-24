@@ -34,7 +34,7 @@
           </div>
           <div class="modal-footer">
             <a href="" class="forgot">Forgot password?</a>
-            <a class="btn btn-success" id="btn-primary" href="file:///C:/Users/kev10/IdeaProjects/demo/src/main/webapp/main.html" role="button">Log In</a>
+            <a class="btn btn-success" id="btn-primary" href="main.html" role="button">Log In</a>
           </div>
           </div>
           <div class="modal-body">
@@ -47,41 +47,6 @@
   
     <script type="text/javascript">
       setTimeout('$("#myModal").modal("show")', 1200)
-    </script>
-
-    <!--<script type="text/javascript">
-      $(document).ready(function() {
-        $("body").css("display", "none");
-
-        $("body").fadeIn(2000);
-
-        $("a").click(function(event){
-          event.preventDefault();
-          linkLocation = this.href;
-          $("body").fadeOut(1000, redirectPage);
-        });
-
-     
-        function redirectPage() {
-          window.location = linkLocation;
-        }
-      });
-    </script>-->
-
-    <script type="text/javascript">
-      $(document).ready(function(){ 
-      $(window).scroll(function(){
-      if ($(this).scrollTop() > 100) {
-      $('#scrollup').fadeIn();
-      } else {
-      $('#scrollup').fadeOut();
-      }
-      });
-      $('#scrollup').click(function(){
-      $("html, body").animate({ scrollTop: 0 }, 600);
-      return false;
-      });
-      });
     </script>
 
     <script type="text/javascript">

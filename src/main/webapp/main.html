@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/style.css" >
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/jquery.min.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js"></script>
   </head>
   <body>
@@ -30,29 +30,25 @@
           <!-- navigation bar -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Main Page<span class="sr-only">(current)</span></a></li>
-              <li><a href="#">Menu</a></li>
+              <li class="active"><a >Main Page<span class="sr-only">(current)</span></a></li>
+              <li><a href="menu.html">Menu</a></li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
+                  <li><a href="pubnews.html">Publish News & Menu</a></li>
                   <li role="separator" class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">One more separated link</a></li>
+                  <li><a href="userform.html">Add New User</a></li>
                 </ul>
               </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li>
                   <!--тут будет использоваться картинка пользователя -->
-                  <div class="col-xs-2 col-sm-2"> <img src="img/user.png" width="40" height="40" class="img-circle userlogo"> </div>
+                  <div class="col-xs-2 col-sm-2"> <img src="img/user.png" width="40" height="40" class="img-circle userlogo"> </div> 
                   <div class="col-xs-10 col-sm-10 username">Альберт Сахапов</div>  <!-- Здесь будет использоваться имя и фамилия пользователя--> 
                   
-                  <div class="col-xs-1 col-sm-1 sett"><a href="settings.html"><img src="img/settings.png"></a></div>
-                  <div class="col-xs-1 col-sm-1 lout"><a href="#"><img src="img/logout4.png"></a></div>
+                  <div class="col-xs-1 col-sm-1 sett"><a href="settings.html"><img src="img/settings.png"></a></div> 
+                  <div class="col-xs-1 col-sm-1 lout"><a href="#"><img src="img/logout4.png"></a></div> 
                 
                 
               </li>
@@ -107,64 +103,39 @@
 
             <div class="newsblock"> <!-- This block contains only ONE post (it's large, because of mobile version)-->
               <div class="row"> 
-                <!--PC and tablets version -->
-                <div class="col-md-5 col-lg-4 imgblock">
-                  <img src="img/test.jpg" height="200" width="300" class="img-rounded hidden-xs hidden-sm">
-                </div>
-                <div class="col-md-7 col-lg-8 hidden-xs hidden-sm headblock">
-                    Wow! It's a news template. It's just a test.
-                </div> 
-                <div class="col-md-7 col-lg-8 hidden-xs hidden-sm textblock">
-                    Here is a text. Here will be posted something great... or not great. It's just a test. I need more words to test my template. Okay, Desktop design looked like a piece of ... on mobile phone. So, Mobile version of website has another version.
-                </div> 
-                <!-- PC version-->
 
-                <!-- Mobile version -->
-                <div class="col-xs-12 col-sm-4 imgblock-mobile">
+                <div class="col-xs-12 col-sm-4 col-md-5 col-lg-4 imgblock">
+                  <img src="img/test.jpg" height="200" width="300" class="img-rounded hidden-xs hidden-sm">
                   <img src="img/test.jpg" height="100" width="150" class="img-rounded hidden-md hidden-lg">
                 </div>
-                <div class="col-xs-12 col-sm-8 hidden-md hidden-lg headblock-mobile">
+                <div class=" col-xs-12 col-sm-8 col-md-7 col-lg-8 headblock">
                     Wow! It's a news template. It's just a test.
                 </div> 
-
-                <div class="col-xs-12 col-sm-8 hidden-md hidden-lg textblock-mobile">
-                    Here is a text. Here will be posted something great... or not great. It's just a test. I need more words to test my template. Okay, Desktop design looked like a piece of ... on mobile phone. So, Mobile version of website has another version.
+                <div class="col-xs-12 col-sm-8 col-md-7 col-lg-8 textblock">
+                    HHere is a text. Here will be posted something great... or not great. It's just a test. I need more words to test my template. Okay, Desktop design looked like a piece of ... on mobile phone. So, Mobile version of website has another version.
                 </div> 
-              </div><!-- Mobile version -->
+
+              </div>
               <hr class="line">
             </div> <!-- End of newsblock -->
 
-
-
             <div class="newsblock"> <!-- This block contains only ONE post (it's large, because of mobile version)-->
               <div class="row"> 
-                <!--PC and tablets version -->
-                <div class="col-md-5 col-lg-4 imgblock">
-                  <img src="img/test.jpg" height="200" width="300" class="img-rounded hidden-xs hidden-sm">
-                </div>
-                <div class="col-md-7 col-lg-8 hidden-xs hidden-sm headblock">
-                    Wow! The second post. 
-                </div> 
-                <div class="col-md-7 col-lg-8 hidden-xs hidden-sm textblock">
-                    I'm testing... again. Some new information. Good news. Bad news. bla-bla-bla-bla
-                </div> 
-                <!-- PC version-->
 
-                <!-- Mobile version -->
-                <div class="col-xs-12 col-sm-4 imgblock-mobile">
+                <div class="col-xs-12 col-sm-4 col-md-5 col-lg-4 imgblock">
+                  <img src="img/test.jpg" height="200" width="300" class="img-rounded hidden-xs hidden-sm">
                   <img src="img/test.jpg" height="100" width="150" class="img-rounded hidden-md hidden-lg">
                 </div>
-                <div class="col-xs-12 col-sm-8 hidden-md hidden-lg headblock-mobile">
+                <div class=" col-xs-12 col-sm-8 col-md-7 col-lg-8 headblock">
                     Wow! The second post. 
                 </div> 
-
-                <div class="col-xs-12 col-sm-8 hidden-md hidden-lg textblock-mobile">
+                <div class="col-xs-12 col-sm-8 col-md-7 col-lg-8 textblock">
                     I'm testing... again. Some new information. Good news. Bad news. bla-bla-bla-bla
                 </div> 
-              </div><!-- Mobile version -->
-              <hr class="line">
-            </div>
 
+              </div>
+              <hr class="line">
+            </div> <!-- End of newsblock -->
 
           <br>
           <br>

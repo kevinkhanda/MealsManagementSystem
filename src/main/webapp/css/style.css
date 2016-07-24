@@ -3,7 +3,7 @@ html {
 }
 
 body {
-	background: url(/img/fon33.png) no-repeat center center fixed;
+	background: url(../img/fon33.png) no-repeat center center fixed;
 	-webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -16,8 +16,10 @@ body {
 	height:306px;
 }
 
-.btn {
-	border-radius: 0;
+@media (max-width: 767px) {
+	#myModal {
+		width:320px;
+	}
 }
 
 #btn-primary {
@@ -67,12 +69,12 @@ Carousel
 */
 
 #menujumbo{
-	background: url(/img/eda.png) center;
+	background: url(../img/eda.png) center;
 	color:#fff;
 }
 
 #planjumbo {
-	background: url(/img/calendar.png) center;
+	background: url(../img/calendar.png) center;
 	color:#fff;
 }
 
@@ -92,7 +94,7 @@ End of carousel
 	right:50px;
 	display:none;
 	text-indent:-9999px;
-	background: url(/img/scroll4.png) no-repeat;
+	background: url(../img/scroll4.png) no-repeat;
 }
 
 #scrollup:hover {
@@ -104,11 +106,11 @@ End of carousel
 	right:50px;
 	display:none;
 	text-indent:-9999px;
-	background: url(/img/scroll4.png) no-repeat;
+	background: url(../img/scroll4.png) no-repeat;
 }
 
 /*
-user info in navbar
+User info in navbar
 */
 
 .userlogo {
@@ -178,10 +180,26 @@ News block
 	padding-left: 70px;
 }
 
+@media(max-width: 991px){
+	.imgblock {
+		text-align: center;
+		padding-left: 0px;
+	}
+}
+
 .headblock {
 	padding-right: 70px;
 	font-size: 28px;
 	font-weight: 600;
+}
+
+@media(max-width: 991px){
+	.headblock {
+		font-size: 20px;
+		font-weight: 600;
+		margin-top: 10px;
+		padding-right: 0px;
+	}
 }
 
 .textblock {
@@ -190,20 +208,15 @@ News block
 	margin-top: 20px;
 }
 
-.headblock-mobile {
-	font-size: 20px;
-	font-weight: 600;
-	margin-top: 10px;
+@media(max-width: 991px){
+	.textblock {
+		font-size: 12px;
+		margin-top: 20px;
+		padding-right: 0px;
+	}
 }
 
-.textblock-mobile {
-	font-size: 12px;
-	margin-top: 20px;
-}
 
-.imgblock-mobile {
-	text-align: center;
-}
 
 /*
 End of newsblock
@@ -218,13 +231,27 @@ Settings page
 	border: 2px solid #419641;
 }
 
+
 .settname {
 	font-size: 45px;
+}
+
+@media(max-width: 991px){
+	.settname {
+		font-size:35px;
+	}
 }
 
 .settrow {
 	margin-left: 15px;
 	margin-top: 15px;
+}
+
+@media(max-width: 991px){
+	.settrow {
+		margin-left: -15px;
+		margin-top: 0px;
+	}
 }
 
 .settmail {
@@ -234,9 +261,25 @@ Settings page
 	margin-top: -10px;
 }
 
+@media(max-width: 991px){
+	.settmail {
+		font-size: 20px;
+		color: #474747;
+		font-style: italic;
+		margin-top: -10px;
+	}
+}
+
 .settup {
 	margin-top: 50px;
 	font-size: 15px;
+}
+
+@media(max-width: 991px){
+	.settup {
+		margin-top: 30px;
+		font-size: 15px;
+	}
 }
 
 .sett-line {
@@ -249,14 +292,40 @@ Settings page
 	margin-top: 15px;
 }
 
+@media(max-width: 991px){
+	.sett-line {
+		color: #419641;
+	 	background-color: #419641;
+	 	height: 1px;
+	 	width:75%;
+	 	text-align: left;
+		margin-top: 10px;
+		margin-left: 12.5%;
+	}
+}
+
 .sett-tele {
 	font-size: 30px;
 	margin-left: 70px;
 }
 
+@media(max-width: 991px){
+	.sett-tele {
+		font-size: 25px;
+		margin-left: 0px;
+	}
+}
+
 .sett-tele2 {
 	margin-left: 72px;
 	margin-top: 30px;
+}
+
+@media(max-width: 991px){
+	.sett-tele2 {
+		margin-left: 0px;
+		margin-top: 30px;
+	}
 }
 
 input[type="radio"] {
@@ -270,16 +339,16 @@ input[type="radio"] + label span {
      height:24px;
      margin:-1px 4px 0 0;
      vertical-align:middle;
-     background:url(/img/radio4.png) left top no-repeat;
+     background:url(../img/radio4.png) left top no-repeat;
      cursor:pointer;
 }
 
 input[type="radio"]:checked + label span {
-     background:url(/img/radio5.png) top no-repeat;
+     background:url(../img/radio5.png) top no-repeat;
 }
 
 input[type="radio"]:disabled + label span {
-     background:url(/img/radio1.png) top no-repeat;
+     background:url(../img/radio1.png) top no-repeat;
      cursor:not-allowed;
 }
 
@@ -293,16 +362,16 @@ input[type="checkbox"] + label span {
      height:24px;
      margin:-1px 4px 0 0;
      vertical-align:middle;
-     background:url(/img/checkbox1.png) left top no-repeat;
+     background:url(../img/checkbox1.png) left top no-repeat;
      cursor:pointer;
 }
 
 input[type="checkbox"]:checked + label span {
-     background:url(/img/checkbox3.png) top no-repeat;
+     background:url(../img/checkbox3.png) top no-repeat;
 }
 
 input[type="checkbox"]:disabled + label span {
-     background:url(/img/checkbox2.png) top no-repeat;
+     background:url(../img/checkbox2.png) top no-repeat;
      cursor:not-allowed;
 }
 
@@ -310,23 +379,49 @@ input[type="checkbox"]:disabled + label span {
 	margin-left: 50px;
 }
 
+@media(max-width: 991px){
+	.rad2 {
+		margin-left: 0px;
+		padding-right: 10px;
+	}
+}
+
 .nicktele {
 	margin-top: -6px;
 	margin-left: 20px;
+}
+
+@media(max-width: 991px){
+	.nicktele {
+		margin-left: 0px;
+		margin-top: -6px;
+	}
 }
 
 .nicktele2 {
 	margin-top: -6px;
 }
 
+@media(max-width: 991px){
+	.nicktele2 {
+		margin-left: 0px;
+		margin-top: -6px;
+	}
+}
+
 .planheader {
 	font-size: 30px;
+}
+
+@media(max-width: 991px){
+	.planheader {
+		font-size: 25px;
+	}
 }
 
 .checkb {
 	margin-top: 25px;
 }
-
 
 .amofd {
 	font-size: 20px;
@@ -338,69 +433,298 @@ input[type="checkbox"]:disabled + label span {
 	color: #474747;
 }
 
+@media(max-width: 991px){
+	.err {
+		font-size: 15px;
+		font-style: italic;
+		color: #474747;
+	}
+}
+
 .plansett {
 	margin-left: 70px;
 }
 
+@media(max-width: 991px){
+	.plansett {
+		margin-left: 0px;
+	}
+}
+
 .logomob {
-	text-align: center;
+	text-align: left;
 }
 
-.settnamemob {
-	font-size: 35px;
+@media(max-width: 991px){
+	.logomob {
+		text-align: center;
+	}
 }
 
-.settmailmob {
-	font-size: 20px;
-	color: #474747;
-	font-style: italic;
-	margin-top: -10px;
-}
-
-.settupmob {
-	margin-top: 30px;
-	font-size: 15px;
-}
-
-.sett-linemob {
-	color: #419641;
- 	background-color: #419641;
- 	height: 1px;
- 	width:75%;
- 	text-align: left;
-	margin-top: 10px;
-}
-
-.sett-telemob {
-	font-size: 25px;
-}
-
-.sett-telemob2 {
-	margin-top: 30px;
-}
-
-.planheadermob {
-	font-size: 25px;
-}
-
-.errmob {
-	font-size: 15px;
-	font-style: italic;
-	color: #474747;
-}
 
 .radmob {
-	padding-right: 30px;
+	padding-right: 0px;
 }
 
-.radmob2 {
-	padding-right: 10px;
+@media(max-width: 991px){
+	.radmob {
+		padding-right: 30px;
+	}
 }
 
-.nickmob {
-	margin-top: -6px;
-}
 
 /*
 End of Settings page
 */
+
+/*
+Admin's Page
+*/
+
+.photoUp {
+    position: relative;
+    overflow: hidden; 
+    height: 34px;  
+    background: #4aa24a;
+    border-radius: 3px;
+    padding: 8px 4px;
+    color: #fff;
+    text-align: center;
+}
+.photoUp:hover {
+    background: #419641;
+}
+
+.photoUp:active {
+	background: #327432;
+}
+
+.photoUp input[type="file"]{
+    display: none; 
+}
+
+.photoUp label {
+    /* Растягиваем label на всю возможную площадь блока */
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.photoUp span {
+    line-height: 36px; 
+}
+
+
+.pubbutton {
+	position: relative;
+    overflow: hidden; 
+    height: 34px;  
+    background: #4aa24a;
+    border-radius: 3px;
+    padding: 8px 4px;
+    color: #fff;
+    text-align: center;
+}
+
+.pubbutton:hover {
+    background: #419641;
+}
+
+.pubbutton:active {
+	background: #327432;	
+}
+
+.pubbutton button[type="button"]{
+    display: none; 
+}
+
+.pubbutton label {
+    /* Растягиваем label на всю возможную площадь блока */
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.pubbutton span {
+    line-height: 36px; 
+}
+
+.pubbtn {
+	margin-left: 15px;
+	margin-top: 15px;
+}
+
+.usrow {
+	margin-left: 15px;
+	margin-top: 15px;
+	margin-right: 15px;
+}
+
+.headus {
+	text-align: center;
+	font-size:35px;
+	padding-bottom: 15px;
+}
+
+.formfont {
+	font-size: 20px;
+}
+
+.usline {
+	color: #419641;
+ 	background-color: #419641;
+ 	height: 1px;
+ 	width:45%;
+ 	text-align: left;
+	margin-top: 15px;
+}
+
+.jp {
+	text-align: right;
+}
+
+@media(max-width: 767px){
+	.jp {
+		text-align: left;
+	}
+}
+
+.usbut {
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+.butmob {
+	text-align: left;
+}
+
+@media(max-width: 767px){
+	.butmob {
+		text-align: center;
+	}
+}
+
+#break {
+	margin-top: 5px;
+}
+
+.docUp {
+    position: relative;
+    overflow: hidden; 
+    height: 34px;  
+    background: #4aa24a;
+    border-radius: 3px;
+    padding: 8px 4px;
+    color: #fff;
+    text-align: center;
+}
+.docUp:hover {
+    background: #419641;
+}
+
+.docUp:active {
+	background: #327432;
+}
+
+.docUp input[type="file"]{
+    display: none; 
+}
+
+.docUp label {
+    /* Растягиваем label на всю возможную площадь блока */
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.docUp span {
+    line-height: 36px; 
+}
+
+.pub2 {
+	position: relative;
+    overflow: hidden; 
+    height: 34px;  
+    background: #4aa24a;
+    border-radius: 3px;
+    padding: 8px 4px;
+    color: #fff;
+    text-align: center;
+    display:none;
+}
+
+.pub2:hover {
+    background: #419641;
+}
+
+.pub2:active {
+	background: #327432;	
+}
+
+.pub2:disabled{
+	background: #fff;	
+}
+
+.pub2 button[type="button"]{
+    display: none; 
+}
+
+.pub2 label {
+    /* Растягиваем label на всю возможную площадь блока */
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.pub2 span {
+    line-height: 36px; 
+}
+
+.filename {
+     background: #fff;
+     border: 0;
+     width:250px;
+}
+
+.menush {
+	width:1110px; 
+	height:600px;
+}
+
+@media(max-width: 1199px){
+	.menush {
+		width:910px; 
+		height:600px;
+	}
+}
+
+.menush-mob {
+	width:710px; 
+	height:600px;
+}
+
+@media(max-width: 767px){
+	.menush-mob {
+		display:none;
+	}
+}
+
+
+
+
+
+
+
+
