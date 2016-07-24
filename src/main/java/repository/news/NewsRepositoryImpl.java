@@ -1,4 +1,4 @@
-package repository;
+package repository.news;
 
 import entity.Data;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +11,10 @@ import java.util.Set;
 
 /**
  * Created by Kevin Khanda on 6/19/2016.
- * Class for implementation of interface DataRepository.
+ * Class for implementation of interface NewsRepository.
  */
 @org.springframework.stereotype.Repository("dataRepository")
-public class DataRepositoryImpl implements DataRepository<Data> {
+public class NewsRepositoryImpl implements NewsRepository<Data> {
 
     @Autowired
     protected JdbcOperations jdbcOperations;
