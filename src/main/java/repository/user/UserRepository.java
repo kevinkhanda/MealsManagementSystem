@@ -11,11 +11,11 @@ import java.io.File;
 
 public interface UserRepository<V extends DomainObject> {
 
-    String getUserName(V object);
+    String getUserName(String login);
 
-    String getUserEmail(V object);
+    String getUserEmail(String login);
 
-    File getUserPhoto (V object);
+    File getUserPhoto (String login);
 
     /* Think about data structure for history of activations
      Maybe use Map<Integer, Object> where Integer will be user id */

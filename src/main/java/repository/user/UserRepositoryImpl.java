@@ -21,28 +21,28 @@ public class UserRepositoryImpl implements UserRepository<User> {
 
     // These three consecutive methods show data from a database
     @Override
-    public String getUserName(User object) {
+    public String getUserName(String login) {
         String result;
         SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT name, last_name" +
-            "FROM users WHERE login = ?;", object.getLogin());
+            "FROM users WHERE login = ?;", login, Types.VARCHAR);
         result = rowSet.getString("last_name") + rowSet.getString("name");
         return result;
     }
 
     @Override
-    public String getUserEmail(User object) {
+    public String getUserEmail(String login) {
         String result;
         SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT email FROM users" +
-            "WHERE login = ?;", object.getLogin());
+            "WHERE login = ?;", login, Types.VARCHAR);
         result = rowSet.getString("email");
         return result;
     }
 
     @Override
-    public File getUserPhoto(User object) {
+    public File getUserPhoto(String login) {
         File result;
         SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT photo FRO< users" +
-            "WHERE login = ?;", object.getLogin());
+            "WHERE login = ?;", login, Types.VARCHAR);
         result = (File) rowSet.getObject("photo");
         return result;
     }

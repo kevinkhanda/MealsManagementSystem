@@ -1,15 +1,21 @@
 package service;
 
-import java.util.Set;
+
+import java.io.File;
 
 /**
  * Created by Kevin Khanda on 6/19/2016.
- * Interface for separating business logic and login of DBMS
+ * Interface for separating business logic and logic of DBMS
  */
 
 public interface DataService {
 
-    boolean persist(String problem);
+    String getUserName(String login);
 
-    Set<String> getRandomData();
+    String getUserEmail(String login);
+
+    File getUserPhoto(String login);
+
+    boolean addUser(String name, String lastName, String fatherName, String organisation,
+                    String phone, String email, String login, String password, String tgAlias, int roleId);
 }
