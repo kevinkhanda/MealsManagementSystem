@@ -12,11 +12,11 @@ import java.sql.Date;
 
 public interface MenuRepository<V extends DomainObject> {
 
-    String getOrgName(V object);
+    String getOrgName(int menuId);
 
-    Date getMenuDate(V object);
+    Date getMenuDate(int menuId);
 
-    File getMenu(V object);
+    File getMenu(int menuId);
 
     // Need to think how to store data here
     void addMenu(V object);

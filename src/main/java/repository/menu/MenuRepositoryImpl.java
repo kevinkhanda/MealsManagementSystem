@@ -20,28 +20,28 @@ public class MenuRepositoryImpl implements MenuRepository<Menu>{
     protected JdbcOperations jdbcOperations;
 
     @Override
-    public String getOrgName(Menu object) {
+    public String getOrgName(int menuId) {
         String result;
         SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT organisation FROM menu" +
-                "WHERE id = ?;", object.getId());
+                "WHERE id = ?;", menuId);
         result = rowSet.getString("organisation");
         return result;
     }
 
     @Override
-    public Date getMenuDate(Menu object) {
+    public Date getMenuDate(int menuId) {
         Date result;
         SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT date FROM menu" +
-                "WHERE id = ?;", object.getId());
+                "WHERE id = ?;", menuId);
         result = rowSet.getDate("date");
         return result;
     }
 
     @Override
-    public File getMenu(Menu object) {
+    public File getMenu(int menuId) {
         File result;
         SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT menu FROM menu" +
-                "WHERE id = ?;", object.getId());
+                "WHERE id = ?;", menuId);
         result = (File) rowSet.getObject("menu");
         return result;
     }

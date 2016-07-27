@@ -11,11 +11,11 @@ import java.io.File;
 
 public interface NewsRepository<V extends DomainObject> {
 
-    String getNewsName(V object);
+    String getNewsName(int newsId);
 
-    String getNewsDescription(V object);
+    String getNewsDescription(int newsId);
 
-    File getNewsPhoto(V object);
+    File getNewsPhoto(int newsId);
 
     // Need to think later about adding information into this two tables
     void addNews(V object);

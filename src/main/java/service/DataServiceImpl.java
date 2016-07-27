@@ -1,6 +1,8 @@
 package service;
 
 import entity.Data;
+import entity.Menu;
+import entity.News;
 import entity.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +14,7 @@ import repository.news.NewsRepositoryImpl;
 import repository.user.UserRepositoryImpl;
 
 import java.io.File;
+import java.sql.Date;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -23,7 +26,9 @@ public class DataServiceImpl implements DataService {
 
     private static final Logger log = LoggerFactory.getLogger(DataServiceImpl.class);
 
-    private AtomicInteger integer = new AtomicInteger(Integer.MIN_VALUE);
+    private AtomicInteger userId = new AtomicInteger(Integer.MIN_VALUE);
+    private AtomicInteger newsId = new AtomicInteger(Integer.MIN_VALUE);
+    private AtomicInteger menuId = new AtomicInteger(Integer.MIN_VALUE);
 
     @Autowired
     @Qualifier("userRepository")
@@ -73,7 +78,7 @@ public class DataServiceImpl implements DataService {
     public boolean addUser(String name, String lastName, String fatherName, String organisation,
                            String phone, String email, String login, String password, String tgAlias, int roleId) {
         try {
-            userRepository.addUser(new User(integer.incrementAndGet(), name, lastName, fatherName, organisation, phone,
+            userRepository.addUser(new User(userId.incrementAndGet(), name, lastName, fatherName, organisation, phone,
                         email, login, password, tgAlias, roleId));
             log.info("User " + name + " " + lastName + " added successfully!");
             return true;
@@ -82,6 +87,100 @@ public class DataServiceImpl implements DataService {
             return false;
         }
     }
+
+    @Override
+    public String getNewsName(int newsId) {
+        try {
+            log.info("News name returned successfully!");
+            return newsRepository.getNewsName(newsId);
+        } catch (Exception e) {
+            log.error("Error with extracting news name: " + e.getMessage(), e);;
+            return "Error with extracting news name: no such news ID found.";
+        }
+    }
+
+    @Override
+    public String getNewsDescription(int newsId) {
+        try {
+            log.info("News description returned successfully!");
+            return newsRepository.getNewsDescription(newsId);
+        } catch (Exception e) {
+            log.error("Error with extracting news description: " + e.getMessage(), e);
+            return "Error with extracting news name: no such news ID found.";
+        }
+    }
+
+    @Override
+    public File getNewsPhoto(int newsId) {
+        try {
+            log.info("News photo returned successfully!");
+            return newsRepository.getNewsPhoto(newsId);
+        } catch (Exception e) {
+            log.error("Error with extracting news photo: " + e.getMessage(), e);
+            return null;
+        }
+    }
+
+    @Override
+    public boolean addNews(String name, String description, File photo) {
+        try {
+            newsRepository.addNews(new News(newsId.incrementAndGet(), name,
+                        description, photo));
+            log.info("News added successfully!");
+            return true;
+        } catch (Exception e) {
+            log.error("Error with adding news: " + e.getMessage(), e);
+            return false;
+        }
+    }
+
+    @Override
+    public String getOrgName(int menuId) {
+        try {
+            log.info("Organisation name returned successfully!");
+            return menuRepository.getOrgName(menuId);
+        } catch (Exception e) {
+            log.error("Error with extracting organisation name: " + e.getMessage(), e);;
+            return "Error with extracting organisation name: no such news ID found.";
+        }
+    }
+
+    @Override
+    public Date getMenuDate(int menuId) {
+        try {
+            log.info("Date returned successfully!");
+            return menuRepository.getMenuDate(menuId);
+        } catch (Exception e) {
+            log.error("Error with extracting news name: " + e.getMessage(), e);;
+            return null;
+        }
+    }
+
+    @Override
+    public File getMenu(int menuId) {
+        try {
+            log.info("Menu returned successfully!");
+            return menuRepository.getMenu(menuId);
+        } catch (Exception e) {
+            log.error("Error with extracting menu: " + e.getMessage(), e);
+            return null;
+        }
+    }
+
+    @Override
+    public boolean addMenu(String orgName, Date date, File menu) {
+        try {
+            menuRepository.addMenu(new Menu(menuId.incrementAndGet(), orgName,
+                    date, menu));
+            log.info("Menu added successfully!");
+            return true;
+        } catch (Exception e) {
+            log.error("Error with adding menu: " + e.getMessage(), e);
+            return false;
+        }
+    }
+
+
 
     /*@Override
     public boolean persist(String problem) {

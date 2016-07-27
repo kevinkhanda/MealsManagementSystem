@@ -20,29 +20,29 @@ public class NewsRepositoryImpl implements NewsRepository<News> {
 
     // As before, three methods for showing data and one for adding.
     @Override
-    public String getNewsName(News object) {
+    public String getNewsName(int newsId) {
         String result;
         SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT name FROM news" +
-                "WHERE id = ?;", object.getId());
+                "WHERE id = ?;", newsId);
         result = rowSet.getString("name");
         return result;
     }
 
     @Override
-    public String getNewsDescription(News object) {
+    public String getNewsDescription(int newsId) {
         String result;
         SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT description FROM news" +
-                "WHERE id = ?;", object.getId());
+                "WHERE id = ?;", newsId);
         result = rowSet.getString("description");
         return result;
     }
 
     // I may have problems with binary files and its decoding.
     @Override
-    public File getNewsPhoto(News object) {
+    public File getNewsPhoto(int newsId) {
         File result;
         SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT photo FROM news" +
-                "WHERE id = ?;", object.getId());
+                "WHERE id = ?;", newsId);
         result = (File) rowSet.getObject("photo");
         return result;
     }
