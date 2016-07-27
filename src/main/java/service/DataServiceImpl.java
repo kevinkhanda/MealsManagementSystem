@@ -94,7 +94,7 @@ public class DataServiceImpl implements DataService {
             log.info("News name returned successfully!");
             return newsRepository.getNewsName(newsId);
         } catch (Exception e) {
-            log.error("Error with extracting news name: " + e.getMessage(), e);;
+            log.error("Error with extracting news name: " + e.getMessage(), e);
             return "Error with extracting news name: no such news ID found.";
         }
     }
@@ -140,7 +140,7 @@ public class DataServiceImpl implements DataService {
             log.info("Organisation name returned successfully!");
             return menuRepository.getOrgName(menuId);
         } catch (Exception e) {
-            log.error("Error with extracting organisation name: " + e.getMessage(), e);;
+            log.error("Error with extracting organisation name: " + e.getMessage(), e);
             return "Error with extracting organisation name: no such news ID found.";
         }
     }
@@ -151,7 +151,7 @@ public class DataServiceImpl implements DataService {
             log.info("Date returned successfully!");
             return menuRepository.getMenuDate(menuId);
         } catch (Exception e) {
-            log.error("Error with extracting news name: " + e.getMessage(), e);;
+            log.error("Error with extracting news name: " + e.getMessage(), e);
             return null;
         }
     }
