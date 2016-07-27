@@ -30,7 +30,41 @@ public class DataController extends ControllerExceptionHandler {
     @Qualifier("dataService")
     private DataServiceImpl dataService;
 
-    @RequestMapping(value = "/persist", method = RequestMethod.POST)
+    /* I think that this method should be separated because
+    successResponse method does not support several parameters. */
+    @RequestMapping(value = "/settings", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    Map<String, Object> getUserInfo(@RequestParam("login") String login) throws RestException {
+        try {
+            if (login == null || login.equals("")) {
+                return Ajax.errorResponse("Please log in!");
+            }
+            dataService.getUserName(login);
+            dataService.getUserEmail(login);
+            dataService.getUserPhoto(login);
+            return Ajax.emptyResponse();
+        } catch (Exception e) {
+            throw new RestException(e);
+        }
+    }
+
+    @RequestMapping(value = {"/main", "/menu", "/pubmenu", "/pubnews", "/userform"}, method = RequestMethod.GET)
+    public
+    @ResponseBody
+    Map<String, Object> getUserInfoNavbar(@RequestParam("login") String login) throws RestException {
+        try {
+            if (login == null || login.equals("")) {
+                return Ajax.errorResponse("Please log in!");
+            }
+            String result = dataService.getUserName(login);
+            return Ajax.successResponse(result);
+        } catch (Exception e) {
+            throw new RestException(e);
+        }
+    }
+
+    /*@RequestMapping(value = "/persist", method = RequestMethod.POST)
     public
     @ResponseBody
     Map<String, Object> persist(@RequestParam("data") String data) throws RestException {
@@ -55,5 +89,5 @@ public class DataController extends ControllerExceptionHandler {
         } catch (Exception e) {
             throw new RestException(e);
         }
-    }
+    }*/
 }
