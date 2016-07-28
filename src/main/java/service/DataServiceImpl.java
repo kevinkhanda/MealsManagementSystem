@@ -119,10 +119,21 @@ public class DataServiceImpl implements DataService {
     }
 
     @Override
-    public boolean addNews(String name, String description, File photo) {
+    public Date getNewsDate(int newsId) {
+        try {
+            log.info("Date returned successfully!");
+            return newsRepository.getNewsDate(newsId);
+        } catch (Exception e) {
+            log.error("Error with extracting news date: " + e.getMessage(), e);
+            return null;
+        }
+    }
+
+    @Override
+    public boolean addNews(String name, String description, File photo, Date date) {
         try {
             newsRepository.addNews(new News(name,
-                        description, photo));
+                        description, photo, date));
             log.info("News added successfully!");
             return true;
         } catch (Exception e) {
@@ -131,16 +142,6 @@ public class DataServiceImpl implements DataService {
         }
     }
 
-    @Override
-    public String getOrgName(int menuId) {
-        try {
-            log.info("Organisation name returned successfully!");
-            return menuRepository.getOrgName(menuId);
-        } catch (Exception e) {
-            log.error("Error with extracting organisation name: " + e.getMessage(), e);
-            return "Error with extracting organisation name: no such news ID found.";
-        }
-    }
 
     @Override
     public Date getMenuDate(int menuId) {
@@ -148,7 +149,7 @@ public class DataServiceImpl implements DataService {
             log.info("Date returned successfully!");
             return menuRepository.getMenuDate(menuId);
         } catch (Exception e) {
-            log.error("Error with extracting news name: " + e.getMessage(), e);
+            log.error("Error with extracting menu date: " + e.getMessage(), e);
             return null;
         }
     }
@@ -165,10 +166,9 @@ public class DataServiceImpl implements DataService {
     }
 
     @Override
-    public boolean addMenu(String orgName, Date date, File menu) {
+    public boolean addMenu(Date date, File menu) {
         try {
-            menuRepository.addMenu(new Menu(orgName,
-                    date, menu));
+            menuRepository.addMenu(new Menu(date, menu));
             log.info("Menu added successfully!");
             return true;
         } catch (Exception e) {

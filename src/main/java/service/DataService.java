@@ -29,15 +29,15 @@ public interface DataService {
 
     File getNewsPhoto(int newsId);
 
-    boolean addNews(String name, String description, File photo);
+    Date getNewsDate(int newsId);
+
+    boolean addNews(String name, String description, File photo, Date date);
 
     // Menu data
-
-    String getOrgName(int menuId);
 
     Date getMenuDate(int menuId);
 
     File getMenu(int menuId);
 
-    boolean addMenu(String orgName, Date date, File menu);
+    boolean addMenu(Date date, File menu);
 }
