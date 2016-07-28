@@ -22,18 +22,18 @@ public class NewsRepositoryImpl implements NewsRepository<News> {
     @Override
     public String getNewsName(int newsId) {
         String result;
-        SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT name FROM news" +
+        SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT header FROM news" +
                 "WHERE id = ?;", newsId);
-        result = rowSet.getString("name");
+        result = rowSet.getString("header");
         return result;
     }
 
     @Override
     public String getNewsDescription(int newsId) {
         String result;
-        SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT description FROM news" +
+        SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT content FROM news" +
                 "WHERE id = ?;", newsId);
-        result = rowSet.getString("description");
+        result = rowSet.getString("content");
         return result;
     }
 
@@ -48,12 +48,22 @@ public class NewsRepositoryImpl implements NewsRepository<News> {
     }
 
     @Override
+    public Date getNewsDate(int newsId) {
+        Date result;
+        SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT date FROM news" +
+                "WHERE id = ?;", newsId);
+        result = rowSet.getDate("date");
+        return result;
+    }
+
+    @Override
     public void addNews(News object) {
         Object[] params = new Object[] {object.getName(), object.getDescription(),
-            object.getPhoto()};
-        int[] types = new int[] {Types.VARCHAR, Types.VARCHAR, Types.BLOB};
+            object.getPhoto(), object.getDate()};
+        int[] types = new int[] {Types.VARCHAR, Types.VARCHAR,
+                Types.BLOB, Types.DATE};
 
-        jdbcOperations.update("INSERT INTO news (name, description, photo)" +
-                "VALUES (?, ?, ?);", params, types);
+        jdbcOperations.update("INSERT INTO news (name, description, photo, date)" +
+                "VALUES (?, ?, ?, ?);", params, types);
     }
 }

@@ -12,8 +12,6 @@ import java.sql.Date;
 
 public interface MenuRepository<V extends DomainObject> {
 
-    String getOrgName(int menuId);
-
     Date getMenuDate(int menuId);
 
     File getMenu(int menuId);

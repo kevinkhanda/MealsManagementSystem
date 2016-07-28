@@ -11,23 +11,13 @@ import java.sql.Date;
 public class Menu implements DomainObject {
 
     // I think we wi need one more entity for organisation (Trapeza, department)
-    private String organisation;
     private Date date;
     // Doc file with menu will be stored here
     private File menu;
 
-    public Menu(String organisation, Date date, File menu) {
-        this.organisation = organisation;
+    public Menu(Date date, File menu) {
         this.date = date;
         this.menu = menu;
-    }
-
-    public String getOrganisation() {
-        return organisation;
-    }
-
-    public void setOrganisation(String organisation) {
-        this.organisation = organisation;
     }
 
     public Date getDate() {

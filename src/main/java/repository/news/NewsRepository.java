@@ -3,6 +3,7 @@ package repository.news;
 import entity.DomainObject;
 
 import java.io.File;
+import java.sql.Date;
 
 /**
  * Created by Kevin Khanda on 6/19/2016.
@@ -16,6 +17,8 @@ public interface NewsRepository<V extends DomainObject> {
     String getNewsDescription(int newsId);
 
     File getNewsPhoto(int newsId);
+
+    Date getNewsDate(int newsId);
 
     // Need to think later about adding information into this two tables
     void addNews(V object);

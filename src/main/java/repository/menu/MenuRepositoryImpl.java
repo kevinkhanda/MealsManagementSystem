@@ -20,15 +20,6 @@ public class MenuRepositoryImpl implements MenuRepository<Menu>{
     protected JdbcOperations jdbcOperations;
 
     @Override
-    public String getOrgName(int menuId) {
-        String result;
-        SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT organisation FROM menu" +
-                "WHERE id = ?;", menuId);
-        result = rowSet.getString("organisation");
-        return result;
-    }
-
-    @Override
     public Date getMenuDate(int menuId) {
         Date result;
         SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT date FROM menu" +
@@ -40,7 +31,7 @@ public class MenuRepositoryImpl implements MenuRepository<Menu>{
     @Override
     public File getMenu(int menuId) {
         File result;
-        SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT menu FROM menu" +
+        SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT file FROM menu" +
                 "WHERE id = ?;", menuId);
         result = (File) rowSet.getObject("menu");
         return result;
@@ -48,10 +39,9 @@ public class MenuRepositoryImpl implements MenuRepository<Menu>{
 
     @Override
     public void addMenu(Menu object) {
-        Object[] params = new Object[] {object.getOrganisation(),
-            object.getDate(), object.getMenu()};
-        int[] types = new int[] {Types.VARCHAR, Types.DATE, Types.BLOB};
-        jdbcOperations.update("INSERT INTO menu (organisation, date, menu)" +
-                "VALUES (?, ?, ?);", params, types);
+        Object[] params = new Object[] {object.getDate(), object.getMenu()};
+        int[] types = new int[] {Types.DATE, Types.BLOB};
+        jdbcOperations.update("INSERT INTO menu (date, menu)" +
+                "VALUES (?, ?);", params, types);
     }
 }

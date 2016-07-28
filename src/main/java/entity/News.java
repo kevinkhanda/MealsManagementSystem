@@ -1,6 +1,7 @@
 package entity;
 
 import java.io.File;
+import java.sql.Date;
 
 /**
  * Created by Kevin Khanda on 7/24/2016.
@@ -12,11 +13,13 @@ public class News implements DomainObject {
     private String name;
     private String description;
     private File photo;
+    private Date date;
 
-    public News(String name, String description, File photo) {
+    public News(String name, String description, File photo, Date date) {
         this.name = name;
         this.description = description;
         this.photo = photo;
+        this.date = date;
     }
 
     public String getName() {
@@ -41,5 +44,13 @@ public class News implements DomainObject {
 
     public void setPhoto(File photo) {
         this.photo = photo;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 }
