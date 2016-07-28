@@ -26,9 +26,6 @@ public class DataServiceImpl implements DataService {
 
     private static final Logger log = LoggerFactory.getLogger(DataServiceImpl.class);
 
-    private AtomicInteger userId = new AtomicInteger(Integer.MIN_VALUE);
-    private AtomicInteger newsId = new AtomicInteger(Integer.MIN_VALUE);
-    private AtomicInteger menuId = new AtomicInteger(Integer.MIN_VALUE);
 
     @Autowired
     @Qualifier("userRepository")
@@ -78,7 +75,7 @@ public class DataServiceImpl implements DataService {
     public boolean addUser(String name, String lastName, String fatherName, String organisation,
                            String phone, String email, String login, String password, String tgAlias, int roleId) {
         try {
-            userRepository.addUser(new User(userId.incrementAndGet(), name, lastName, fatherName, organisation, phone,
+            userRepository.addUser(new User(name, lastName, fatherName, organisation, phone,
                         email, login, password, tgAlias, roleId));
             log.info("User " + name + " " + lastName + " added successfully!");
             return true;
@@ -124,7 +121,7 @@ public class DataServiceImpl implements DataService {
     @Override
     public boolean addNews(String name, String description, File photo) {
         try {
-            newsRepository.addNews(new News(newsId.incrementAndGet(), name,
+            newsRepository.addNews(new News(name,
                         description, photo));
             log.info("News added successfully!");
             return true;
@@ -170,7 +167,7 @@ public class DataServiceImpl implements DataService {
     @Override
     public boolean addMenu(String orgName, Date date, File menu) {
         try {
-            menuRepository.addMenu(new Menu(menuId.incrementAndGet(), orgName,
+            menuRepository.addMenu(new Menu(orgName,
                     date, menu));
             log.info("Menu added successfully!");
             return true;

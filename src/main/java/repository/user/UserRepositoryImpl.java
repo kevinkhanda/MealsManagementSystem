@@ -41,7 +41,7 @@ public class UserRepositoryImpl implements UserRepository<User> {
     @Override
     public File getUserPhoto(String login) {
         File result;
-        SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT photo FRO< users" +
+        SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT photo FROM users" +
             "WHERE login = ?;", login, Types.VARCHAR);
         result = (File) rowSet.getObject("photo");
         return result;
@@ -51,18 +51,18 @@ public class UserRepositoryImpl implements UserRepository<User> {
     @Override
     public void addUser(User object) {
 
-        Object[] params = new Object[] {object.getId(), object.getRoleId(), object.getLastName(),
+        Object[] params = new Object[] {object.getRoleId(), object.getLastName(),
             object.getName(), object.getFatherName(), object.getOrganisation(), object.getPhone(),
             object.getEmail(), object.getLogin(), object.getPassword(), object.getTgAlias(),
             object.getPhoto()};
 
-        int[] types = new int[] {Types.INTEGER, Types.INTEGER, Types.VARCHAR, Types.VARCHAR,
+        int[] types = new int[] {Types.INTEGER, Types.VARCHAR, Types.VARCHAR,
             Types.VARCHAR, Types.VARCHAR, Types.VARCHAR, Types.VARCHAR, Types.VARCHAR,
         Types.VARCHAR, Types.VARCHAR, Types.BLOB}; // only blob type supported
 
-        jdbcOperations.update("INSERT INTO users (id, role, last_name, name, father_name, " +
+        jdbcOperations.update("INSERT INTO users (role, last_name, name, father_name, " +
                 "organisation, phone, email, login, password, tg_alias, user_photo)" +
-                "VALUES ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?;", params, types);
+                "VALUES ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?;", params, types);
     }
 
     // Also here should be a method to show meal type

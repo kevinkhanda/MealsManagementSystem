@@ -49,11 +49,11 @@ public class NewsRepositoryImpl implements NewsRepository<News> {
 
     @Override
     public void addNews(News object) {
-        Object[] params = new Object[] {object.getId(), object.getName(), object.getDescription(),
+        Object[] params = new Object[] {object.getName(), object.getDescription(),
             object.getPhoto()};
-        int[] types = new int[] {Types.INTEGER, Types.VARCHAR, Types.VARCHAR, Types.BLOB};
+        int[] types = new int[] {Types.VARCHAR, Types.VARCHAR, Types.BLOB};
 
-        jdbcOperations.update("INSERT INTO news (id, name, description, photo)" +
-                "VALUES (?, ?, ?, ?);", params, types);
+        jdbcOperations.update("INSERT INTO news (name, description, photo)" +
+                "VALUES (?, ?, ?);", params, types);
     }
 }

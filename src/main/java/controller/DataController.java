@@ -12,8 +12,8 @@ import service.DataServiceImpl;
 import utils.Ajax;
 import utils.RestException;
 
+import java.io.File;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * Created by Kevin Khanda on 6/19/2016.
@@ -30,34 +30,48 @@ public class DataController extends ControllerExceptionHandler {
     @Qualifier("dataService")
     private DataServiceImpl dataService;
 
-    /* I think that this method should be separated because
-    successResponse method does not support several parameters. */
-    @RequestMapping(value = "/settings", method = RequestMethod.GET)
+    // This method will be used to show name of user in navbar and twice in page settings
+    @RequestMapping(value = {"/main", "/menu", "/pubmenu", "/pubnews", "/settings",
+            "/userform"}, method = RequestMethod.GET)
     public
     @ResponseBody
-    Map<String, Object> getUserInfo(@RequestParam("login") String login) throws RestException {
-        try {
-            if (login == null || login.equals("")) {
-                return Ajax.errorResponse("Please log in!");
-            }
-            dataService.getUserName(login);
-            dataService.getUserEmail(login);
-            dataService.getUserPhoto(login);
-            return Ajax.emptyResponse();
-        } catch (Exception e) {
-            throw new RestException(e);
-        }
-    }
-
-    @RequestMapping(value = {"/main", "/menu", "/pubmenu", "/pubnews", "/userform"}, method = RequestMethod.GET)
-    public
-    @ResponseBody
-    Map<String, Object> getUserInfoNavbar(@RequestParam("login") String login) throws RestException {
+    Map<String, Object> getUserName(@RequestParam("login") String login) throws RestException {
         try {
             if (login == null || login.equals("")) {
                 return Ajax.errorResponse("Please log in!");
             }
             String result = dataService.getUserName(login);
+            return Ajax.successResponse(result);
+        } catch (Exception e) {
+            throw new RestException(e);
+        }
+    }
+
+    @RequestMapping(value = "/settings", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    Map<String, Object> getUserEmail(@RequestParam("login") String login) throws RestException {
+        try {
+            if (login == null || login.equals("")) {
+                return Ajax.errorResponse("Please log in!");
+            }
+            String result = dataService.getUserEmail(login);
+            return Ajax.successResponse(result);
+        } catch (Exception e) {
+            throw new RestException(e);
+        }
+    }
+
+    @RequestMapping(value = {"/main", "/menu", "/pubmenu", "/pubnews", "/settings",
+            "/userform"}, method = RequestMethod.GET)
+    public
+    @ResponseBody
+    Map<String, Object> getUserPhoto(@RequestParam("login") String login) throws RestException {
+        try {
+            if (login == null || login.equals("")) {
+                return Ajax.errorResponse("Please log in!");
+            }
+            File result = dataService.getUserPhoto(login);
             return Ajax.successResponse(result);
         } catch (Exception e) {
             throw new RestException(e);

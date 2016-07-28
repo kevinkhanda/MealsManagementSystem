@@ -9,24 +9,14 @@ import java.io.File;
  */
 public class News implements DomainObject {
 
-    private int id;
     private String name;
     private String description;
     private File photo;
 
-    public News(int id, String name, String description, File photo) {
-        this.id = id;
+    public News(String name, String description, File photo) {
         this.name = name;
         this.description = description;
         this.photo = photo;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {

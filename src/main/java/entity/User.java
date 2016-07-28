@@ -9,7 +9,6 @@ import java.io.File;
  */
 public class User implements DomainObject {
 
-    private int id;
     private String name;
     private String lastName;
     private String fatherName;
@@ -24,10 +23,9 @@ public class User implements DomainObject {
     // Ask Almira about roles and then decide how to set it here.
     private int roleId;
 
-    public User(int id, String name, String lastName, String fatherName, String organisation,
+    public User(String name, String lastName, String fatherName, String organisation,
                 String phone, String email, String login, String password, String tgAlias, int roleId) {
 
-        this.id = id;
         this.name = name;
         this.lastName = lastName;
         this.fatherName = fatherName;
@@ -38,14 +36,6 @@ public class User implements DomainObject {
         this.password = password;
         this.tgAlias = tgAlias;
         this.roleId = roleId;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {

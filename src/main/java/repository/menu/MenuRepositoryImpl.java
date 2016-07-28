@@ -48,10 +48,10 @@ public class MenuRepositoryImpl implements MenuRepository<Menu>{
 
     @Override
     public void addMenu(Menu object) {
-        Object[] params = new Object[] {object.getId(), object.getOrganisation(),
+        Object[] params = new Object[] {object.getOrganisation(),
             object.getDate(), object.getMenu()};
-        int[] types = new int[] {Types.INTEGER, Types.VARCHAR, Types.DATE, Types.BLOB};
-        jdbcOperations.update("INSERT INTO menu (id, organisation, date, menu)" +
-                "VALUES (?, ?, ?, ?);", params, types);
+        int[] types = new int[] {Types.VARCHAR, Types.DATE, Types.BLOB};
+        jdbcOperations.update("INSERT INTO menu (organisation, date, menu)" +
+                "VALUES (?, ?, ?);", params, types);
     }
 }
