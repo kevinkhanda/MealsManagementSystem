@@ -6,6 +6,7 @@ import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 import java.io.File;
+import java.sql.PreparedStatement;
 import java.sql.Types;
 
 /**
@@ -25,7 +26,7 @@ public class UserRepositoryImpl implements UserRepository<User> {
         String result;
         SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT name, last_name" +
             "FROM users WHERE login = ?;", login, Types.VARCHAR);
-        result = rowSet.getString("last_name") + rowSet.getString("name");
+        result = rowSet.getString("last_name") + " " + rowSet.getString("name");
         return result;
     }
 
