@@ -27,26 +27,26 @@ import java.util.Properties;
 @EnableJpaRepositories (basePackageClasses = Application.class)
 public class JpaConfig implements TransactionManagementConfigurer {
 
-    @Value("${dataSource.driverClassName}")
+    @Value("${spring.datasource.driver-class-name}")
     private String driver;
 
-    @Value("${dataSource.url}")
+    @Value("${spring.datasource.url}")
     private String url;
 
-    @Value("${dataSource.username}")
+    @Value("${spring.datasource.username}")
     private String username;
 
-    @Value("${dataSource.password}")
+    @Value("${spring.datasource.password}")
     private String password;
 
-    @Value("${hibernate.dialect}")
+    @Value("${spring.jpa.properties.hibernate.dialect}")
     private String dialect;
 
     /*
     Will have value "update" in properties so that DataBase will always update
     hbm2ddl also has value "create" which always drops previous DataBase and creates new
      */
-    @Value("${hibernate.hbm2ddl.auto}")
+    @Value("${spring.jpa.hibernate.ddl-auto}")
     private String hbm2ddlAuto;
 
     @Bean
