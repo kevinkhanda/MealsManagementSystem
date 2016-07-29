@@ -1,9 +1,11 @@
 package repository.user;
 
 import entity.User;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
+import org.springframework.orm.hibernate5.HibernateOperations;
 
 import java.io.File;
 import java.sql.Types;
