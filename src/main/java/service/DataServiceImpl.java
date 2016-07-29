@@ -1,6 +1,5 @@
 package service;
 
-import entity.Data;
 import entity.Menu;
 import entity.News;
 import entity.User;
@@ -15,7 +14,6 @@ import repository.user.UserRepositoryImpl;
 
 import java.io.File;
 import java.sql.Date;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Created by Kevin Khanda on 6/19/2016.
@@ -25,7 +23,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class DataServiceImpl implements DataService {
 
     private static final Logger log = LoggerFactory.getLogger(DataServiceImpl.class);
-
 
     @Autowired
     @Qualifier("userRepository")

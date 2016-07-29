@@ -2,11 +2,10 @@ package repository.user;
 
 import entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcOperations;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 import java.io.File;
-import java.sql.PreparedStatement;
 import java.sql.Types;
 
 /**
@@ -18,13 +17,13 @@ import java.sql.Types;
 public class UserRepositoryImpl implements UserRepository<User> {
 
     @Autowired
-    protected JdbcOperations jdbcOperations;
+    protected JdbcTemplate jdbcTemplate;
 
     // These three consecutive methods show data from a database
     @Override
     public String getUserName(String login) {
         String result;
-        SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT name, last_name" +
+        SqlRowSet rowSet = jdbcTemplate.queryForRowSet("SELECT name, last_name" +
             "FROM users WHERE login = ?;", login, Types.VARCHAR);
         result = rowSet.getString("last_name") + " " + rowSet.getString("name");
         return result;
@@ -33,7 +32,7 @@ public class UserRepositoryImpl implements UserRepository<User> {
     @Override
     public String getUserEmail(String login) {
         String result;
-        SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT email FROM users" +
+        SqlRowSet rowSet = jdbcTemplate.queryForRowSet("SELECT email FROM users" +
             "WHERE login = ?;", login, Types.VARCHAR);
         result = rowSet.getString("email");
         return result;
@@ -42,7 +41,7 @@ public class UserRepositoryImpl implements UserRepository<User> {
     @Override
     public File getUserPhoto(String login) {
         File result;
-        SqlRowSet rowSet = jdbcOperations.queryForRowSet("SELECT photo FROM users" +
+        SqlRowSet rowSet = jdbcTemplate.queryForRowSet("SELECT photo FROM users" +
             "WHERE login = ?;", login, Types.VARCHAR);
         result = (File) rowSet.getObject("photo");
         return result;
@@ -61,7 +60,7 @@ public class UserRepositoryImpl implements UserRepository<User> {
             Types.VARCHAR, Types.VARCHAR, Types.VARCHAR, Types.VARCHAR, Types.VARCHAR,
         Types.VARCHAR, Types.VARCHAR, Types.BLOB}; // only blob type supported
 
-        jdbcOperations.update("INSERT INTO users (role, last_name, name, father_name, " +
+        jdbcTemplate.update("INSERT INTO users (role, last_name, name, father_name, " +
                 "organisation, phone, email, login, password, tg_alias, user_photo)" +
                 "VALUES ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?;", params, types);
     }
