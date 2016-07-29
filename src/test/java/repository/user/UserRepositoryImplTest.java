@@ -1,5 +1,6 @@
 package repository.user;
 
+import entity.User;
 import org.junit.Test;
 
 /**
@@ -7,9 +8,11 @@ import org.junit.Test;
  * Test for class UserRepositoryImpl
  */
 public class UserRepositoryImplTest {
+
+    private UserRepositoryImpl userRepository = new UserRepositoryImpl();
+
     @Test
     public void getUserName() throws Exception {
-        UserRepositoryImpl userRepository = new UserRepositoryImpl();
         String login = "test";
         String name = userRepository.getUserName(login);
         System.out.println(name);
@@ -17,9 +20,14 @@ public class UserRepositoryImplTest {
 
     @Test
     public void getUserEmail() throws Exception {
-        UserRepositoryImpl userRepository = new UserRepositoryImpl();
         String login = "test";
         String email = userRepository.getUserEmail(login);
         System.out.println(email);
+    }
+
+    @Test
+    public void addUser() throws Exception {
+        userRepository.addUser(new User("Kevin", "Khanda", "---", "Student",
+                "12345", "k.khanda@innopolis.ru", "kkhanda", "12345", "tg", null, 123));
     }
 }

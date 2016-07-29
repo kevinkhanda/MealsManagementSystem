@@ -73,10 +73,10 @@ public class DataServiceImpl implements DataService {
 
     @Override
     public boolean addUser(String name, String lastName, String fatherName, String organisation,
-                           String phone, String email, String login, String password, String tgAlias, int roleId) {
+                           String phone, String email, String login, String password, String tgAlias, File photo, int roleId) {
         try {
             userRepository.addUser(new User(name, lastName, fatherName, organisation, phone,
-                        email, login, password, tgAlias, roleId));
+                        email, login, password, tgAlias, photo, roleId));
             log.info("User " + name + " " + lastName + " added successfully!");
             return true;
         } catch (Exception e) {

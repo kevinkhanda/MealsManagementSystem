@@ -24,7 +24,8 @@ public class User implements DomainObject {
     private int roleId;
 
     public User(String name, String lastName, String fatherName, String organisation,
-                String phone, String email, String login, String password, String tgAlias, int roleId) {
+                String phone, String email, String login, String password, String tgAlias,
+                File photo, int roleId) {
 
         this.name = name;
         this.lastName = lastName;
@@ -35,6 +36,7 @@ public class User implements DomainObject {
         this.login = login;
         this.password = password;
         this.tgAlias = tgAlias;
+        this.photo = photo;
         this.roleId = roleId;
     }
 

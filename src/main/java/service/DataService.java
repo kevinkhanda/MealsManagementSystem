@@ -19,7 +19,7 @@ public interface DataService {
     File getUserPhoto(String login);
 
     boolean addUser(String name, String lastName, String fatherName, String organisation,
-                    String phone, String email, String login, String password, String tgAlias, int roleId);
+                    String phone, String email, String login, String password, String tgAlias, File photo, int roleId);
 
     // News data
 
