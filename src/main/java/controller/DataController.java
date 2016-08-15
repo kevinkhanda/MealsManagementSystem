@@ -78,8 +78,16 @@ public class DataController extends ControllerExceptionHandler {
         }
     }
 
-
-
+    /*@RequestMapping(value = "/settings", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    Map<String, Object> addUser(@RequestParam("role") String role,
+                                @RequestParam("role_id") int role_id,
+                                @RequestParam("name") String name,
+                                @RequestParam("father_name") String father_name,
+                                @RequestParam("organisation") String organisation,
+                                @RequestParam("phone") String phone,)
+*/
     /*@RequestMapping(value = "/persist", method = RequestMethod.POST)
     public
     @ResponseBody

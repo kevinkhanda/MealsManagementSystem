@@ -39,7 +39,7 @@ public class DataServiceImpl implements DataService {
     @Override
     public String getUserName(String login) {
         try {
-            log.info("User name returned successfully!");
+            log.info("Returning user name...");
             return userRepository.getUserName(login);
         } catch (Exception e) {
             log.error("Error with extracting user name: " + e.getMessage(), e);
@@ -50,7 +50,7 @@ public class DataServiceImpl implements DataService {
     @Override
     public String getUserEmail(String login) {
         try {
-            log.info("User email returned successfully!");
+            log.info("Returning user email...");
             return userRepository.getUserEmail(login);
         } catch (Exception e) {
             log.error("Error with extracting user email: " + e.getMessage(), e);
@@ -60,7 +60,7 @@ public class DataServiceImpl implements DataService {
 
     public File getUserPhoto(String login) {
         try {
-            log.info("User photo returned successfully!");
+            log.info("Returning user photo...");
             return userRepository.getUserPhoto(login);
         } catch (Exception e) {
             log.error("Error with extracting user photo: " + e.getMessage(), e);
@@ -85,7 +85,7 @@ public class DataServiceImpl implements DataService {
     @Override
     public String getNewsName(int newsId) {
         try {
-            log.info("News name returned successfully!");
+            log.info("Returning news name...");
             return newsRepository.getNewsName(newsId);
         } catch (Exception e) {
             log.error("Error with extracting news name: " + e.getMessage(), e);
@@ -96,7 +96,7 @@ public class DataServiceImpl implements DataService {
     @Override
     public String getNewsDescription(int newsId) {
         try {
-            log.info("News description returned successfully!");
+            log.info("Returning news description...");
             return newsRepository.getNewsDescription(newsId);
         } catch (Exception e) {
             log.error("Error with extracting news description: " + e.getMessage(), e);
@@ -107,7 +107,7 @@ public class DataServiceImpl implements DataService {
     @Override
     public File getNewsPhoto(int newsId) {
         try {
-            log.info("News photo returned successfully!");
+            log.info("Returning news photo...");
             return newsRepository.getNewsPhoto(newsId);
         } catch (Exception e) {
             log.error("Error with extracting news photo: " + e.getMessage(), e);
@@ -118,7 +118,7 @@ public class DataServiceImpl implements DataService {
     @Override
     public Date getNewsDate(int newsId) {
         try {
-            log.info("Date returned successfully!");
+            log.info("Returning news date...");
             return newsRepository.getNewsDate(newsId);
         } catch (Exception e) {
             log.error("Error with extracting news date: " + e.getMessage(), e);
@@ -143,7 +143,7 @@ public class DataServiceImpl implements DataService {
     @Override
     public Date getMenuDate(int menuId) {
         try {
-            log.info("Date returned successfully!");
+            log.info("Returning menu date...");
             return menuRepository.getMenuDate(menuId);
         } catch (Exception e) {
             log.error("Error with extracting menu date: " + e.getMessage(), e);
@@ -154,7 +154,7 @@ public class DataServiceImpl implements DataService {
     @Override
     public File getMenu(int menuId) {
         try {
-            log.info("Menu returned successfully!");
+            log.info("Returning menu...");
             return menuRepository.getMenu(menuId);
         } catch (Exception e) {
             log.error("Error with extracting menu: " + e.getMessage(), e);
