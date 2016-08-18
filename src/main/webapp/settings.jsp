@@ -30,14 +30,14 @@
                 <!-- navigation bar -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="main.html">Main Page<span class="sr-only">(current)</span></a></li>
-                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="main.jsp">Main Page<span class="sr-only">(current)</span></a></li>
+                        <li><a href="menu.jsp">Menu</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="pubnews.html">Publish News & Menu</a></li>
+                                <li><a href="pubnews.jsp">Publish News & Menu</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="userform.html">Add New User</a></li>
+                                <li><a href="userform.jsp">Add New User</a></li>
                             </ul>
                         </li>
                     </ul>

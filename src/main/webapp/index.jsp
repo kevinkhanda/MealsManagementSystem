@@ -34,7 +34,7 @@
           </div>
           <div class="modal-footer">
             <a href="" class="forgot">Forgot password?</a>
-            <a class="btn btn-success" id="btn-primary" href="main.html" role="button">Log In</a>
+            <a class="btn btn-success" id="btn-primary" href="main.jsp" role="button">Log In</a>
           </div>
           </div>
           <div class="modal-body">

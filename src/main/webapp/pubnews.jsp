@@ -30,14 +30,14 @@
             <!-- navigation bar -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                <li><a href="main.html">Main Page<span class="sr-only">(current)</span></a></li>
-                <li><a href="menu.html">Menu</a></li>
+                <li><a href="main.jsp">Main Page<span class="sr-only">(current)</span></a></li>
+                <li><a href="menu.jsp">Menu</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     <li class="active"><a>Publish News & Menu</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a href="userform.html">Add New User</a></li>
+                    <li><a href="userform.jsp">Add New User</a></li>
                   </ul>
                 </li>
               </ul>
@@ -47,8 +47,8 @@
                   <div class="col-xs-2 col-sm-2"> <img src="img/user.png" width="40" height="40" class="img-circle userlogo"> </div> 
                   <div class="col-xs-10 col-sm-10 username">Альберт Сахапов</div>  <!-- Здесь будет использоваться имя и фамилия пользователя--> 
                   
-                  <div class="col-xs-1 col-sm-1 sett"><a href="settings.html"><img src="img/settings.png"></a></div> 
-                  <div class="col-xs-1 col-sm-1 lout"><a href="index.html"><img src="img/logout4.png"></a></div>
+                  <div class="col-xs-1 col-sm-1 sett"><a href="settings.jsp"><img src="img/settings.png"></a></div> 
+                  <div class="col-xs-1 col-sm-1 lout"><a href="index.jsp"><img src="img/logout4.png"></a></div>
                   
                   
                 </li>
