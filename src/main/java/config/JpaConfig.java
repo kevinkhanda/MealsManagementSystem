@@ -52,10 +52,10 @@ public class JpaConfig implements TransactionManagementConfigurer {
     @Bean
     public DataSource configureDataSource() {
         HikariConfig config = new HikariConfig();
-        config.setDriverClassName(driver);
-        config.setJdbcUrl(url);
-        config.setUsername(username);
-        config.setPassword(password);
+        config.setDriverClassName("org.postgresql.Driver");
+        config.setJdbcUrl("jdbc:postgresql://10.90.104.164:5432/Innopolis");
+        config.setUsername("postgres");
+        config.setPassword("postgres");
 
         return new HikariDataSource(config);
     }
@@ -69,8 +69,8 @@ public class JpaConfig implements TransactionManagementConfigurer {
         entityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
 
         Properties jpaProperties = new Properties();
-        jpaProperties.put(org.hibernate.cfg.Environment.DIALECT, dialect);
-        jpaProperties.put(org.hibernate.cfg.Environment.HBM2DDL_AUTO, hbm2ddlAuto);
+        jpaProperties.put(org.hibernate.cfg.Environment.DIALECT, "org.hibernate.dialect.PostgreSQLDialect");
+        jpaProperties.put(org.hibernate.cfg.Environment.HBM2DDL_AUTO, "update");
         entityManagerFactoryBean.setJpaProperties(jpaProperties);
 
         return entityManagerFactoryBean;

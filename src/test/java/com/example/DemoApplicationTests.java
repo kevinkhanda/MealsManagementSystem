@@ -5,6 +5,8 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
+import repository.user.UserRepositoryImpl;
+import service.DataServiceImpl;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
@@ -13,5 +15,7 @@ public class DemoApplicationTests {
 
 	@Test
 	public void contextLoads() {
-	}
+        UserRepositoryImpl repository = new UserRepositoryImpl();
+        System.out.println(repository.getUserName("k.khanda@innopolis.ru"));
+    }
 }
