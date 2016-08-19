@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Inno project</title>
+  <title>Innopolis - Add User</title>
   <!-- Bootstrap -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
@@ -49,7 +49,7 @@
               <div class="col-xs-10 col-sm-10 username">Альберт Сахапов</div>  <!-- Здесь будет использоваться имя и фамилия пользователя-->
 
               <div class="col-xs-1 col-sm-1 sett"><a href="settings.jsp"><img src="img/settings.png"></a></div>
-              <div class="col-xs-1 col-sm-1 lout"><a href="#"><img src="img/logout4.png"></a></div>
+              <div class="col-xs-1 col-sm-1 lout"><a href="index.jsp"><img src="img/logout4.png"></a></div>
 
 
             </li>
