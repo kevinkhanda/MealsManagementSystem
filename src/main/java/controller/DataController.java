@@ -30,6 +30,18 @@ public class DataController extends ControllerExceptionHandler {
     @Qualifier("dataService")
     private DataServiceImpl dataService;
 
+    @RequestMapping(value = "/")
+    public
+    @ResponseBody String index() {
+        try {
+            log.info("Redirecting to index.jsp");
+            return "index.jsp";
+        } catch (Exception e) {
+            log.error(e);
+            return e.toString();
+        }
+    }
+
     // This method will be used to show name of user in navbar and twice in page settings
     @RequestMapping(value = {"/main", "/menu", "/pubmenu", "/pubnews", "/settings",
             "/userform"}, method = RequestMethod.GET)

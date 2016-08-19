@@ -64,7 +64,7 @@ public class UserRepositoryImpl implements UserRepository<User> {
 
         jdbcTemplate.update("INSERT INTO users (role, last_name, name, father_name, " +
                 "organisation, phone, email, login, password, tg_alias, user_photo)" +
-                "VALUES ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?;", params, types);
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);", params, types);
     }
 
     // Also here should be a method to show meal type
