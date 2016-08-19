@@ -15,7 +15,7 @@ public class DemoApplicationTests {
 
 	@Test
 	public void contextLoads() {
-        UserRepositoryImpl repository = new UserRepositoryImpl();
-        System.out.println(repository.getUserName("k.khanda@innopolis.ru"));
+        DataServiceImpl dataService = new DataServiceImpl();
+        System.out.println(dataService.getUserName("k.khanda@innopolis.ru"));
     }
 }

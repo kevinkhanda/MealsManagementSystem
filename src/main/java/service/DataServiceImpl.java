@@ -26,15 +26,15 @@ public class DataServiceImpl implements DataService {
 
     @Autowired
     @Qualifier("userRepository")
-    private UserRepositoryImpl userRepository;
+    private UserRepositoryImpl userRepository = new UserRepositoryImpl();
 
     @Autowired
     @Qualifier("newsRepository")
-    private NewsRepositoryImpl newsRepository;
+    private NewsRepositoryImpl newsRepository = new NewsRepositoryImpl();
 
     @Autowired
     @Qualifier("menuRepository")
-    private MenuRepositoryImpl menuRepository;
+    private MenuRepositoryImpl menuRepository = new MenuRepositoryImpl();
 
     @Override
     public String getUserName(String login) {

@@ -26,28 +26,38 @@ public class UserRepositoryImpl implements UserRepository<User> {
     // These three consecutive methods show data from a database
     @Override
     public String getUserName(String login) {
-        String result;
+        String result = "";
         SqlRowSet rowSet = jdbcTemplate.queryForRowSet("SELECT name, last_name" +
             " FROM users WHERE email = ?;", login);
-        result = rowSet.getString("name");
+        while (rowSet.next()) {
+            result = rowSet.getString("last_name") + " " + rowSet.getString("name");
+        }
         return result;
     }
 
     @Override
     public String getUserEmail(String login) {
-        String result;
-        SqlRowSet rowSet = jdbcTemplate.queryForRowSet("SELECT email FROM users" +
-            "WHERE login = ?;", login);
-        result = rowSet.getString("email");
+        String result = "";
+        try {
+            SqlRowSet rowSet = jdbcTemplate.queryForRowSet("SELECT email FROM users" +
+                    "WHERE login = ?;", login);
+            while (rowSet.next()) {
+                result = rowSet.getString("email");
+            }
+        } catch (Exception e) {
+            System.out.println("File not found.");
+        }
         return result;
     }
 
     @Override
     public File getUserPhoto(String login) {
-        File result;
+        File result = null;
         SqlRowSet rowSet = jdbcTemplate.queryForRowSet("SELECT photo FROM users" +
             "WHERE login = ?;", login);
-        result = (File) rowSet.getObject("photo");
+        while (rowSet.next()) {
+            result = (File) rowSet.getObject("photo");
+        }
         return result;
     }
 
