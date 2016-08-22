@@ -114,7 +114,7 @@
                     Wow! It's a news template. It's just a test.
                 </div> 
                 <div class="col-xs-12 col-sm-8 col-md-7 col-lg-8 textblock">
-                    HHere is a text. Here will be posted something great... or not great. It's just a test. I need more words to test my template. Okay, Desktop design looked like a piece of ... on mobile phone. So, Mobile version of website has another version.
+                    Here is a text. Here will be posted something great... or not great. It's just a test. I need more words to test my template. Okay, Desktop design looked like a piece of ... on mobile phone. So, Mobile version of website has another version.
                 </div> 
 
               </div>

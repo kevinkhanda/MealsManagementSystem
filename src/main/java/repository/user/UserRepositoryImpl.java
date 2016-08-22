@@ -3,10 +3,15 @@ package repository.user;
 import config.JpaConfig;
 import entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.CallableStatementCallback;
+import org.springframework.jdbc.core.CallableStatementCreator;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 import java.io.File;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.sql.Types;
 
 /**
@@ -28,7 +33,7 @@ public class UserRepositoryImpl implements UserRepository<User> {
     public String getUserName(String login) {
         String result = "";
         SqlRowSet rowSet = jdbcTemplate.queryForRowSet("SELECT name, last_name" +
-            " FROM users WHERE login = ?;", login);
+                " FROM users WHERE login = ?;", login);
         while (rowSet.next()) {
             result = rowSet.getString("last_name") + " " + rowSet.getString("name");
         }
@@ -54,7 +59,7 @@ public class UserRepositoryImpl implements UserRepository<User> {
     public File getUserPhoto(String login) {
         File result = null;
         SqlRowSet rowSet = jdbcTemplate.queryForRowSet("SELECT photo FROM users" +
-            " WHERE login = ?;", login);
+                " WHERE login = ?;", login);
         while (rowSet.next()) {
             result = (File) rowSet.getObject("photo");
         }
@@ -65,21 +70,17 @@ public class UserRepositoryImpl implements UserRepository<User> {
     @Override
     public void addUser(User object) {
 
-        Object[] params = new Object[] {object.getRoleId(), object.getLastName(),
-            object.getName(), object.getFatherName(), object.getOrganisation(), object.getPhone(),
-            object.getEmail(), object.getLogin(), object.getPassword(), object.getTgAlias(),
-            object.getPhoto()};
+        Object[] params = new Object[]{object.getRoleId(), object.getLastName(),
+                object.getName(), object.getFatherName(), object.getOrganisation(), object.getPhone(),
+                object.getEmail(), object.getLogin(), object.getPassword(), object.getTgAlias(),
+                object.getPhoto()};
 
-        int[] types = new int[] {Types.INTEGER, Types.VARCHAR, Types.VARCHAR,
-            Types.VARCHAR, Types.VARCHAR, Types.VARCHAR, Types.VARCHAR, Types.VARCHAR,
-        Types.VARCHAR, Types.VARCHAR, Types.BLOB}; // only blob type supported
+        int[] types = new int[]{Types.INTEGER, Types.VARCHAR, Types.VARCHAR,
+                Types.VARCHAR, Types.VARCHAR, Types.VARCHAR, Types.VARCHAR, Types.VARCHAR,
+                Types.VARCHAR, Types.VARCHAR, Types.BLOB}; // only blob type supported
 
         jdbcTemplate.update("INSERT INTO users (role, last_name, name, father_name, " +
                 "organization, phone, email, login, password, tg_alias, photo)" +
                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);", params, types);
     }
-
-    // Also here should be a method to show meal type
-
-    // And one method to show telegram info
 }
