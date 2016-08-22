@@ -1,5 +1,6 @@
 package com.example;
 
+import entity.Menu;
 import entity.News;
 import entity.User;
 import org.junit.Test;
@@ -7,20 +8,18 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
+import repository.menu.MenuRepositoryImpl;
 import repository.news.NewsRepositoryImpl;
 import repository.user.UserRepositoryImpl;
 import service.DataServiceImpl;
-
-import java.io.File;
-import java.sql.Date;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
 public class DemoApplicationTests {
 
-	@Test
-	public void contextLoads() {
+    @Test
+    public void contextLoads() {
         // Testing retrieving user information from db
         DataServiceImpl dataService = new DataServiceImpl();
         System.out.println(dataService.getUserName("k.khanda"));
@@ -38,5 +37,10 @@ public class DemoApplicationTests {
         NewsRepositoryImpl newsRepository = new NewsRepositoryImpl();
         newsRepository.addNews(new News("Test news", "This is a news for testing", null, null));
         System.out.println(newsRepository.getNewsName(1));
+
+        // Testing how application works with menu
+        MenuRepositoryImpl menuRepository = new MenuRepositoryImpl();
+        menuRepository.addMenu(new Menu(null, null));
+        // Printing is not supported here because system is not configured for storing files, yet
     }
 }
