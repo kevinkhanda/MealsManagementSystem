@@ -38,6 +38,8 @@
                   <li><a href="pubnews.jsp">Publish News & Menu</a></li>
                   <li role="separator" class="divider"></li>
                   <li><a href="userform.jsp">Add New User</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="history.jsp">Show History</a></li>
                 </ul>
               </li>
             </ul>

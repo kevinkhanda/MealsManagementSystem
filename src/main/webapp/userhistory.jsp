@@ -38,6 +38,8 @@
                                 <li><a href="pubnews.jsp">Publish News & Menu</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="userform.jsp">Add New User</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="history.jsp">Show History</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -77,7 +79,7 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <th scope="row">1423</th>
+                            <th scope="row">4023</th>
                             <td>22.08.2016 12:17</td>
                             <td>Lunch</td>
                             <td>Sakhapov Albert</td>

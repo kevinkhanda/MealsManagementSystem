@@ -38,6 +38,8 @@
                     <li><a href="pubnews.jsp">Publish News & Menu</a></li>
                     <li role="separator" class="divider"></li>
                    <li><a href="userform.jsp">Add New User</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="history.jsp">Show History</a></li>
                   </ul>
                 </li>
               </ul>
@@ -45,11 +47,11 @@
                 <li>
                   <!--тут будет использоваться картинка пользователя -->
                   <div class="col-xs-2 col-sm-2"> <img src="img/user.png" width="40" height="40" class="img-circle userlogo"> </div>
-                  <div class="col-xs-10 col-sm-10 username"><a class="man" href="userhistory.jsp">Альберт Сахапов</a></div>  <!-- Здесь будет использоваться имя и фамилия пользователя-->
-                  
-                  <div class="col-xs-1 col-sm-1 sett"><a href="settings.jsp"><img src="img/settings.png"></a></div> 
+                  <div class="col-xs-10 col-sm-10 username"><a class="man" href="userhistory.jsp">Альберт Сахапов</a></div> <!-- Здесь будет использоваться имя и фамилия пользователя-->
+
+                  <div class="col-xs-1 col-sm-1 sett"><a href="settings.jsp"><img src="img/settings.png"></a></div>
                   <div class="col-xs-1 col-sm-1 lout"><a href="index.jsp"><img src="img/logout4.png"></a></div>
-                  
+
                   
                 </li>
               </ul>
