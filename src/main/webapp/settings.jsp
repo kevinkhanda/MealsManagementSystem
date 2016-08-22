@@ -45,7 +45,7 @@
                         <li>
                             <!--тут будет использоваться картинка пользователя -->
                             <div class="col-xs-2 col-sm-2"> <img src="img/user.png" width="40" height="40" class="img-circle userlogo"> </div>
-                            <div class="col-xs-10 col-sm-10 username">Альберт Сахапов</div>  <!-- Здесь будет использоваться имя и фамилия пользователя-->
+                            <div class="col-xs-10 col-sm-10 username"><a class="man" href="userhistory.jsp">Альберт Сахапов</a></div> <!-- Здесь будет использоваться имя и фамилия пользователя-->
 
                             <div class="col-xs-1 col-sm-1"><img src="img/settings.png"></div>
                             <div class="col-xs-1 col-sm-1 lout"><a href="index.jsp"><img src="img/logout4.png"></a></div>

@@ -732,6 +732,27 @@ Admin's Page
 	}
 }
 
+.man {
+	color: #fff;
+}
+
+.man:hover {
+	color:#fff;
+	opacity: 0.8;
+	text-decoration: none;
+}
+
+.bi {
+	width:970px;
+	margin-left: 90px;
+}
+
+@media(max-width: 1199px){
+	.bi {
+		margin-left: 0px;
+	}
+}
+
 
 
 
