@@ -28,7 +28,7 @@ public class UserRepositoryImpl implements UserRepository<User> {
     public String getUserName(String login) {
         String result = "";
         SqlRowSet rowSet = jdbcTemplate.queryForRowSet("SELECT name, last_name" +
-            " FROM users WHERE email = ?;", login);
+            " FROM users WHERE login = ?;", login);
         while (rowSet.next()) {
             result = rowSet.getString("last_name") + " " + rowSet.getString("name");
         }
@@ -40,7 +40,7 @@ public class UserRepositoryImpl implements UserRepository<User> {
         String result = "";
         try {
             SqlRowSet rowSet = jdbcTemplate.queryForRowSet("SELECT email FROM users" +
-                    "WHERE login = ?;", login);
+                    " WHERE login = ?;", login);
             while (rowSet.next()) {
                 result = rowSet.getString("email");
             }
@@ -54,7 +54,7 @@ public class UserRepositoryImpl implements UserRepository<User> {
     public File getUserPhoto(String login) {
         File result = null;
         SqlRowSet rowSet = jdbcTemplate.queryForRowSet("SELECT photo FROM users" +
-            "WHERE login = ?;", login);
+            " WHERE login = ?;", login);
         while (rowSet.next()) {
             result = (File) rowSet.getObject("photo");
         }
@@ -75,7 +75,7 @@ public class UserRepositoryImpl implements UserRepository<User> {
         Types.VARCHAR, Types.VARCHAR, Types.BLOB}; // only blob type supported
 
         jdbcTemplate.update("INSERT INTO users (role, last_name, name, father_name, " +
-                "organisation, phone, email, login, password, tg_alias, user_photo)" +
+                "organization, phone, email, login, password, tg_alias, photo)" +
                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);", params, types);
     }
 
