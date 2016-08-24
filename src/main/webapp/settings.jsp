@@ -75,8 +75,8 @@
                         <div class="settmail">a.sahapov@innopolis.ru</div> <!-- Здесь будет использоваться email пользователя-->
 
                         <div class="form-group settup"> <!-- загрузка фотографии для профиля -->
-                            <label for="exampleInputFile">Change Photo</label>
-                            <input type="file" id="exampleInputFile">
+                            <label for="upphoto3">Change Photo</label>
+                            <input type="file" id="upphoto3">
                             <p class="help-block">Upload your photo.</p>
                         </div>
                     </div>
@@ -128,18 +128,18 @@
                     <div class="sett-tele2">
                         <form class=" col-xs-12 col-sm-7 col-md-7 col-lg-6 yp">
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Current Password">
+                                <input type="password" id="pass2" class="form-control" placeholder="Current Password">
                             </div>
                         </form>
                         <form class=" col-xs-12 col-sm-7 col-md-7 col-lg-6 yp">
                             <div class="form-group ">
-                                <input type="password" class="form-control" placeholder="New Password">
+                                <input type="password" id="pass3" class="form-control" placeholder="New Password">
                             </div>
                         </form>
 
                         <form class=" col-xs-12 col-sm-7 col-md-7 col-lg-6 yp">
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Confirm Password">
+                                <input type="password" id="pass4" class="form-control" placeholder="Confirm Password">
                             </div>
                             <button type="submit" class="btn btn-success ">Save</button>
                         </form>

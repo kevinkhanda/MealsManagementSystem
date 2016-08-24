@@ -20,7 +20,7 @@
               <label>Email address</label>
               <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user"> </span></span>
-                <input type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon1" id="email">
               </div>
             </div>
 
@@ -28,7 +28,7 @@
               <label for="exampleInputPassword1">Password</label>
               <div class="input-group">
                 <span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-lock"> </span></span>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" aria-describedby="basic-addon2">
+                <input type="password" class="form-control" id="pass" placeholder="Password" aria-describedby="basic-addon2">
               </div>
             </div>
           </div>

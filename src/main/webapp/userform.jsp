@@ -71,22 +71,22 @@
           <br>
           <br>
           <div class="form-group">
-            <label for="inputEmail3" class="hidden-xs col-sm-3 col-md-2 col-lg-2 control-label">Last Name</label>
+            <label for="lname" class="hidden-xs col-sm-3 col-md-2 col-lg-2 control-label">Last Name</label>
             <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
-              <input type="text" class="form-control" id="inputEmail3" placeholder="Last Name" required>
+              <input type="text" class="form-control" id="lname" placeholder="Last Name" required>
             </div>
           </div>
           <div class="form-group">
-            <label for="inputEmail3" class="hidden-xs col-sm-3 col-md-2 col-lg-2 control-label">First Name</label>
+            <label for="fname" class="hidden-xs col-sm-3 col-md-2 col-lg-2 control-label">First Name</label>
             <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
-              <input type="text" class="form-control" id="inputEmail3" placeholder="First Name" required>
+              <input type="text" class="form-control" id="fname" placeholder="First Name" required>
             </div>
           </div>
 
           <div class="form-group">
-            <label for="inputEmail3" class="hidden-xs col-sm-3 col-md-2 col-lg-2 control-label">Patronymic</label>
+            <label for="patron" class="hidden-xs col-sm-3 col-md-2 col-lg-2 control-label">Patronymic</label>
             <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
-              <input type="text" class="form-control" id="inputEmail3" placeholder="Patronymic" required>
+              <input type="text" class="form-control" id="patron" placeholder="Patronymic" required>
             </div>
           </div>
 
@@ -97,17 +97,17 @@
           <br>
 
           <div class="form-group">
-            <label for="inputEmail3" class="hidden-xs col-sm-3 col-md-2 col-lg-2 control-label">Email</label>
+            <label for="email2" class="hidden-xs col-sm-3 col-md-2 col-lg-2 control-label">Email</label>
             <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
-              <input type="email" class="form-control" id="inputEmail3" placeholder="Email" required>
+              <input type="email" class="form-control" id="email2" placeholder="Email" required>
             </div>
           </div>
 
 
           <div class="form-group">
-            <label for="inputEmail3" class="hidden-xs col-sm-3 col-md-2 col-lg-2 control-label">Oragnization</label>
+            <label for="org" class="hidden-xs col-sm-3 col-md-2 col-lg-2 control-label">Oragnization</label>
             <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
-              <input type="text" class="form-control" id="inputEmail3" placeholder="Organization">
+              <input type="text" class="form-control" id="org" placeholder="Organization">
             </div>
           </div>
 
@@ -127,14 +127,14 @@
           <div class="form-group">
             <label class="hidden-xs col-sm-3 col-md-2 col-lg-2 control-label">Login</label>
             <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
-              <input type="text" class="form-control" placeholder="Login">
+              <input type="text" class="form-control" id="login" placeholder="Login">
             </div>
           </div>
 
           <div class="form-group">
             <label class="hidden-xs col-sm-3 col-md-2 col-lg-2 control-label">Temporary Password</label>
             <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
-              <input type="password" class="form-control" placeholder="Temporary Password">
+              <input type="password" class="form-control" id="temppass" placeholder="Temporary Password">
             </div>
           </div>
 

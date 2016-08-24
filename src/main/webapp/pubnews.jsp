@@ -68,19 +68,19 @@
                     Publish News
                   </div>
                   <div class="form-group col-xs-12 col-sm-9 col-md-8 col-lg-9">                    
-                    <input type="text" class="form-control" id="inputEmail3" placeholder="Header" required>
+                    <input type="text" class="form-control" id="header" placeholder="Header" required>
                   </div>
                   <!-- PC upload-->
                   <div class="form-group hidden-xs col-sm-3 col-md-4 col-lg-3 photoUp">
                     <label>
-                      <input type="file" id="exampleInputFile">
+                      <input type="file" id="upphoto">
                       <span>Upload Photo</span>
                     </label>
                   </div>
                   <!-- /PC -->
                   <div>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                      <textarea class="form-control" rows="8" placeholder="Your Text..."></textarea>
+                      <textarea class="form-control" rows="8" placeholder="Your Text..." id="textar"></textarea>
                     </div>  
                   </div>
                   <!-- PC publish-->
@@ -94,8 +94,8 @@
 
                   <!--Mobile upload and publish-->
                   <div class="form-group hidden-sm hidden-md hidden-lg col-xs-12">
-                    <label for="exampleInputFile">Upload Photo</label>
-                    <input type="file" id="exampleInputFile">
+                    <label for="upphoto2">Upload Photo</label>
+                    <input type="file" id="upphoto2">
                   </div>
                   <div class="form-group hidden-sm hidden-md hidden-lg col-xs-12">
                     <button type="button" class="btn btn-success">Publish</button>
@@ -127,7 +127,7 @@
                     </div>
                     <div style="width:100%;" id="doc" class="form-group docUp file-upload">
                       <label>
-                        <input type="file" id="exampleInputFile">
+                        <input type="file" id="upmenu">
                         <span>Upload Menu (DOC File)</span>
                       </label>
                     </div>
