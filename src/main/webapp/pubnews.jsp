@@ -51,8 +51,6 @@
                   
                   <div class="col-xs-1 col-sm-1 sett"><a href="/settings"><img src="img/settings.png"></a></div>
                   <div class="col-xs-1 col-sm-1 lout"><a href="/logout"><img src="img/logout4.png"></a></div>
-                  
-                  
                 </li>
               </ul>
 
