@@ -25,4 +25,6 @@ public interface UserRepository<V extends DomainObject> {
     void addUser(V object);
 
     // Here should be method for sending Ajax-response with Meal types of users.
+
+    void addTelegram(String login, String tgAlias);
 }

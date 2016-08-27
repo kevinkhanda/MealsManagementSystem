@@ -13,13 +13,15 @@ public class Quota implements DomainObject {
     private int timeLimit;
     // Deleted boolean isWeekend from database because it is redundant if isWorkday is false
     private boolean isWorkday;
+    private boolean nextMonth;
 
-    public Quota(int id, int mealTypeId, int quantity, int timeLimit, boolean isWorkday) {
-        this.id = id;
+    public Quota(int cardId, int mealTypeId, int quantity, int timeLimit, boolean isWorkday, boolean nextMonth) {
+        this.id = cardId;
         this.mealTypeId = mealTypeId;
         this.quantity = quantity;
         this.timeLimit = timeLimit;
         this.isWorkday = isWorkday;
+        this.nextMonth = nextMonth;
     }
 
     public int getId() {
@@ -60,5 +62,13 @@ public class Quota implements DomainObject {
 
     public void setWorkday(boolean workday) {
         isWorkday = workday;
+    }
+
+    public boolean isNextMonth() {
+        return nextMonth;
+    }
+
+    public void setNextMonth(boolean nextMonth) {
+        this.nextMonth = nextMonth;
     }
 }

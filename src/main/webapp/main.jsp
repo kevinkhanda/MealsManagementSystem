@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -73,14 +74,14 @@
                 <div class="item active">
                   <div class="jumbotron" id="menujumbo">
                     <h1 id="jumbo"> Menu for Today! </h1> <br><br>
-                    <p id="jumbo"> Menu for breakfast,  lunch and dinner.   </p> 
+                    <p id="jumbo"> Menu for breakfast,  lunch and dinner.   </p>
                     <p id="jumbo"><a class="btn btn-success btn-lg" href="/menu" role="button">Look Through!</a></p>
                   </div>
                 </div>
                 <div class="item">
                     <div class="jumbotron" id="planjumbo">
                       <h1 id="jumbo">Choose the Plan!</h1> <br><br>
-                      <p id="jumbo">Choose your Meal Plan for the next month.</p> 
+                      <p id="jumbo">Choose your Meal Plan for the next month.</p>
                       <p id="jumbo"><a class="btn btn-success btn-lg" href="/settings" role="button">Choose!</a></p>
                     </div>
                 </div>

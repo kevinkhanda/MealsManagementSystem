@@ -83,6 +83,16 @@ public class DataServiceImpl implements DataService {
     }
 
     @Override
+    public void addTelegram(String login, String tgAlias) {
+        try {
+            userRepository.addTelegram(login, tgAlias);
+            log.info("Telegram alias " + tgAlias + " for user " + login + "added successfully!");
+        } catch (Exception e) {
+            log.error("Error with adding telegram alias for user: " + login +"! Exception: " + e.getMessage());
+        }
+    }
+
+    @Override
     public String getNewsName(int newsId) {
         try {
             log.info("Returning news name...");
@@ -173,8 +183,6 @@ public class DataServiceImpl implements DataService {
             return false;
         }
     }
-
-
 
     /*@Override
     public boolean persist(String problem) {

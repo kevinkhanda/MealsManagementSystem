@@ -30,18 +30,6 @@ public class DataController extends ControllerExceptionHandler {
     @Qualifier("dataService")
     private DataServiceImpl dataService;
 
-    @RequestMapping(value = "/")
-    public
-    @ResponseBody String index() {
-        try {
-            log.info("Redirecting to index.jsp");
-            return "index.jsp";
-        } catch (Exception e) {
-            log.error(e);
-            return e.toString();
-        }
-    }
-
     // This method will be used to show name of user in navbar and twice in page settings
     @RequestMapping(value = {"/main", "/menu", "/pubmenu", "/pubnews", "/settings",
             "/userform"}, method = RequestMethod.GET)
@@ -85,6 +73,23 @@ public class DataController extends ControllerExceptionHandler {
             }
             File result = dataService.getUserPhoto(login);
             return Ajax.successResponse(result);
+        } catch (Exception e) {
+            throw new RestException(e);
+        }
+    }
+
+    @RequestMapping(value="/settings", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    Map<String, Object> addTelegram(@RequestParam("login") String login,
+                     @RequestParam("tgAlias") String tgAlias) throws RestException {
+        try {
+            if (login == null || login.equals("") ||
+                    tgAlias == null || tgAlias.equals("")) {
+                return Ajax.errorResponse("Statements cannot be empty+!");
+            }
+            dataService.addTelegram(login, tgAlias);
+            return Ajax.successResponse("Telegram alias saved!");
         } catch (Exception e) {
             throw new RestException(e);
         }

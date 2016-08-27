@@ -83,4 +83,12 @@ public class UserRepositoryImpl implements UserRepository<User> {
                 "organization, phone, email, login, password, tg_alias, photo)" +
                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);", params, types);
     }
+
+    @Override
+    public void addTelegram(String login, String tgAlias) {
+        /*Object[] params = new Object[]{tgAlias, login};
+        Object[] types = new Object[]{Types.VARCHAR, Types.VARCHAR};*/
+
+        jdbcTemplate.update("UPDATE users SET tg_alias = ? WHERE login = ?", tgAlias, login);
+    }
 }

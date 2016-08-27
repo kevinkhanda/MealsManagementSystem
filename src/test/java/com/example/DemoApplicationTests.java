@@ -42,5 +42,7 @@ public class DemoApplicationTests {
         MenuRepositoryImpl menuRepository = new MenuRepositoryImpl();
         menuRepository.addMenu(new Menu(null, null));
         // Printing is not supported here because system is not configured for storing files, yet
+
+        userRepository.addTelegram("t.khazhiev", "@khazhix");
     }
 }

@@ -19,8 +19,6 @@ public class User implements DomainObject {
     private String password;
     private String tgAlias;
     private File photo;
-
-    // Ask Almira about roles and then decide how to set it here.
     private int roleId;
 
     public User(String name, String lastName, String fatherName, String organisation,

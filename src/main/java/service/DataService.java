@@ -21,6 +21,8 @@ public interface DataService {
     boolean addUser(String name, String lastName, String fatherName, String organisation,
                     String phone, String email, String login, String password, String tgAlias, File photo, int roleId);
 
+    void addTelegram(String login, String tgAlias);
+
     // News data
 
     String getNewsName(int newsId);
