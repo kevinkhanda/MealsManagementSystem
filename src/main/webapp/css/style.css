@@ -13,7 +13,7 @@ body {
 
 #myModal {
 	width:400px;
-	height:306px;
+	height:345px;
 }
 
 @media (max-width: 767px) {
@@ -753,6 +753,9 @@ Admin's Page
 	}
 }
 
+.but {
+	text-align: right;
+}
 
 
 
