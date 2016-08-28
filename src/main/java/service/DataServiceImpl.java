@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import repository.menu.MenuRepositoryImpl;
 import repository.news.NewsRepositoryImpl;
+import repository.quota.QuotaRepositoryImpl;
 import repository.user.UserRepositoryImpl;
 
 import java.io.File;
@@ -35,6 +36,10 @@ public class DataServiceImpl implements DataService {
     @Autowired
     @Qualifier("menuRepository")
     private MenuRepositoryImpl menuRepository = new MenuRepositoryImpl();
+
+    @Autowired
+    @Qualifier("quotaRepository")
+    private QuotaRepositoryImpl quotaRepository = new QuotaRepositoryImpl();
 
     @Override
     public String getUserName(String login) {
@@ -181,6 +186,26 @@ public class DataServiceImpl implements DataService {
         } catch (Exception e) {
             log.error("Error with adding menu: " + e.getMessage(), e);
             return false;
+        }
+    }
+
+    /**
+     * Method that will update existing rows with given parameters
+     * @param login of user that changes meal type
+     * @param mealTypeID 1, 2, 3, 4 or 5.
+     *                   for more info check quotaRepository methods
+     * @param quantity
+     * @param isWorkday
+     * @param isWeekend
+     */
+    @Override
+    public void quotaForNextMonth(String login, int mealTypeID, int quantity, boolean isWorkday, boolean isWeekend) {
+        try {
+            quotaRepository.quotaForNextMonth(login, mealTypeID, quantity,
+                    isWorkday, isWeekend);
+            log.info("Meal plan for user " + login + " added successfully.");
+        } catch (Exception e) {
+            log.error(e.getMessage());
         }
     }
 

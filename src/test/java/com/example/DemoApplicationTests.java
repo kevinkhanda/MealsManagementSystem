@@ -10,6 +10,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import repository.menu.MenuRepositoryImpl;
 import repository.news.NewsRepositoryImpl;
+import repository.quota.QuotaRepository;
+import repository.quota.QuotaRepositoryImpl;
 import repository.user.UserRepositoryImpl;
 import service.DataServiceImpl;
 
@@ -32,6 +34,7 @@ public class DemoApplicationTests {
         userRepository.addUser(new User("test", "test", "test", "test", null, "test",
                 "test", "test", "test", null, 2));
         System.out.println(dataService.getUserName("test"));
+        userRepository.addTelegram("t.khazhiev", "@khazhix");
 
         // Testing how database is working with news
         NewsRepositoryImpl newsRepository = new NewsRepositoryImpl();
@@ -41,8 +44,16 @@ public class DemoApplicationTests {
         // Testing how application works with menu
         MenuRepositoryImpl menuRepository = new MenuRepositoryImpl();
         menuRepository.addMenu(new Menu(null, null));
-        // Printing is not supported here because system is not configured for storing files, yet
+        // Printing is not supported here because system is
+        // not configured for storing files, yet
 
-        userRepository.addTelegram("t.khazhiev", "@khazhix");
+        // Checking how quota queries works
+        QuotaRepositoryImpl quotaRepository = new QuotaRepositoryImpl();
+        quotaRepository.quotaForNextMonth("k.khanda", 1, 1, true, true);
+        quotaRepository.quotaForNextMonth("k.khanda", 2, 1, true, true);
+        quotaRepository.quotaForNextMonth("k.khanda", 3, 1, true, true);
+
+        // Checking dataService
+        dataService.quotaForNextMonth("k.khanda", 2, 1, true, false);
     }
 }

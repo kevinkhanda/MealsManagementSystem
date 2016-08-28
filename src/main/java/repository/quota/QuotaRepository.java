@@ -9,6 +9,6 @@ import entity.DomainObject;
 
 public interface QuotaRepository<V extends DomainObject> {
     // Implementation of this method will add a quota for a user.
-    void quotaForNextMonth(String login, int mealTypeID,
+    void quotaForNextMonth(String login, int mealTypeId, int quantity,
                            boolean isWorkday, boolean isWeekend);
 }

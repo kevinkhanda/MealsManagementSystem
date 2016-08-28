@@ -3,15 +3,10 @@ package repository.user;
 import config.JpaConfig;
 import entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.CallableStatementCallback;
-import org.springframework.jdbc.core.CallableStatementCreator;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 import java.io.File;
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.SQLException;
 import java.sql.Types;
 
 /**
@@ -86,9 +81,6 @@ public class UserRepositoryImpl implements UserRepository<User> {
 
     @Override
     public void addTelegram(String login, String tgAlias) {
-        /*Object[] params = new Object[]{tgAlias, login};
-        Object[] types = new Object[]{Types.VARCHAR, Types.VARCHAR};*/
-
         jdbcTemplate.update("UPDATE users SET tg_alias = ? WHERE login = ?", tgAlias, login);
     }
 }

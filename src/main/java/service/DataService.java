@@ -42,4 +42,7 @@ public interface DataService {
     File getMenu(int menuId);
 
     boolean addMenu(Date date, File menu);
+
+    void quotaForNextMonth(String login, int mealTypeID,int quantity,
+                           boolean isWorkday, boolean isWeekend);
 }
