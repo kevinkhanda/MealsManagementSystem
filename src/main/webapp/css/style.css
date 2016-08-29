@@ -750,6 +750,7 @@ Admin's Page
 @media(max-width: 1199px){
 	.bi {
 		margin-left: 0px;
+		width: auto;
 	}
 }
 
