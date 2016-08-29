@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 
@@ -35,21 +33,18 @@
             </div>
         </c:if>
         <div class="modal-content">
-            <div class="modal-body">
-
-                  
-                        
+            <div class="modal-body">  
                 <form action="/login" method="post">
                     <div class="form-group">
                         <label>Email address</label>
                         <div class="input-group">
                         <span class="input-group-addon" id="basic-addon1"><span
                                 class="glyphicon glyphicon-user"> </span></span>
-                            <input type="text" name="username" class="form-control" placeholder="Email" aria-describedby="basic-addon1"
+                            <input type="text" name="username" class="form-control" placeholder="Email"
+                                   aria-describedby="basic-addon1"
                                    id="email">
                         </div>
                     </div>
-
 
                     <div class="form-group">
                         <label for="pass">Password</label>
@@ -60,31 +55,23 @@
                                    aria-describedby="basic-addon2">
                         </div>
                     </div>
-                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                     <hr>
-                    <div class="but"><input type="submit" value="Sign In" class="btn btn-success"/></div>
-
+                    <div class="but">
+                        <input type="submit" value="Sign In" class="btn btn-success"/>
+                    </div>
                 </form>
             </div>
-
-
         </div>
         <div class="modal-body">
             <p>powered by <a href="http://university.innopolis.ru/" id="inn">Innopolis University</a></p>
         </div>
     </div>
-
-
-    <!--<div class="bs-docs-example" style="padding-bottom: 24px;"><a class="btn btn-primary btn-large" href="#myModal" data-toggle="modal">Запустить демонстрацию модального элемента</a></div>-->
 </div>
-
-
 
 <script type="text/javascript">
     setTimeout('$("#myModal").modal("show")', 1200)
 </script>
-
-
 
 <script type="text/javascript">
     $(window).resize(function () {
@@ -95,7 +82,6 @@
         });
     });
 </script>
-
 
 <script type="text/javascript">
     $(window).resize();

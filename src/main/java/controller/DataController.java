@@ -95,6 +95,26 @@ public class DataController extends ControllerExceptionHandler {
         }
     }
 
+    @RequestMapping(value = "/settings", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    Map<String, Object> quoteForNextMonth(@RequestParam("login") String login,
+                                          @RequestParam("mealTypeId") int mealTypeId,
+                                          @RequestParam("quantity") int quantity,
+                                          @RequestParam("isWorkday") boolean isWorkday,
+                                          @RequestParam("isWeekend") boolean isWeekend) throws RestException {
+         try {
+             if (login == null || login.equals("")) {
+                 return Ajax.errorResponse("Use valid login!");
+
+             }
+             dataService.quotaForNextMonth(login, mealTypeId, quantity, isWorkday, isWeekend);
+             return Ajax.successResponse("Meal type saved!");
+         } catch (Exception e) {
+             throw new RestException(e);
+         }
+    }
+
     /*@RequestMapping(value = "/settings", method = RequestMethod.POST)
     public
     @ResponseBody

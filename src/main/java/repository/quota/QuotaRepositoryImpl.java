@@ -15,6 +15,7 @@ import java.sql.Types;
  * 1 - breakfast, 2 - lunch, 3 - dinner
  * 4- coffee-break 1, 5 - coffee-break 2
  */
+@org.springframework.stereotype.Repository("quotaRepository")
 public class QuotaRepositoryImpl implements QuotaRepository<Quota> {
 
     @Autowired
@@ -27,6 +28,7 @@ public class QuotaRepositoryImpl implements QuotaRepository<Quota> {
     public void quotaForNextMonth(String login, int mealTypeId, int quantity,
                                   boolean isWorkday, boolean isWeekend) {
         // Not cardId because there will be a collision in pom.xml file
+        // Intentional violation of naming conditions
         int card_id = -1;
         SqlRowSet rowSet = jdbcTemplate.queryForRowSet("SELECT card.id FROM card, users " +
                 "WHERE users.login = ? AND card.id = users.id;", login);

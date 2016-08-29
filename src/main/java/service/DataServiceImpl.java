@@ -73,6 +73,25 @@ public class DataServiceImpl implements DataService {
         }
     }
 
+    /**
+     * Method that adds new user into a database with given parameters.
+     * Method should be allowed only to role "ADMIN"
+     * @param name of user
+     * @param lastName of user
+     * @param fatherName of user
+     * @param organisation (student, employee, guest, etc)
+     * @param phone should be a String of 11 symbols
+     * @param email can be taken from a database.
+     *              For example: k.khanda@innopolis.ru
+     * @param login substring of email that is before @ sign
+     * @param password will be encrypted and stored in a database
+     * @param tgAlias in this step it can be skipped, because user can
+     *                manually add it in settings page
+     * @param photo not configured yet
+     * @param roleId there are three roles right now (1 - user, 2 - admin,
+     *               3 - publisher)
+     * @return true if succeeded, false otherwise
+     */
     @Override
     public boolean addUser(String name, String lastName, String fatherName, String organisation,
                            String phone, String email, String login, String password, String tgAlias, File photo, int roleId) {
@@ -87,6 +106,11 @@ public class DataServiceImpl implements DataService {
         }
     }
 
+    /**
+     * Method that will add a telegram alias for user
+     * @param login of user that sends request
+     * @param tgAlias takes as an input
+     */
     @Override
     public void addTelegram(String login, String tgAlias) {
         try {
@@ -194,9 +218,9 @@ public class DataServiceImpl implements DataService {
      * @param login of user that changes meal type
      * @param mealTypeID 1, 2, 3, 4 or 5.
      *                   for more info check quotaRepository methods
-     * @param quantity
-     * @param isWorkday
-     * @param isWeekend
+     * @param quantity of allowed meals for this card
+     * @param isWorkday include workdays?
+     * @param isWeekend include weekends?
      */
     @Override
     public void quotaForNextMonth(String login, int mealTypeID, int quantity, boolean isWorkday, boolean isWeekend) {
@@ -209,19 +233,4 @@ public class DataServiceImpl implements DataService {
         }
     }
 
-    /*@Override
-    public boolean persist(String problem) {
-        try {
-            dataRepository.persist(new Data(UUID.randomUUID(), problem));
-            return true;
-        } catch (Exception e) {
-            log.error("ERROR SAVING DATA: " + e.getMessage(), e);
-            return false;
-        }
-    }*/
-
-    /*@Override
-    public Set<String> getRandomData() {
-        return dataRepository.getRandomData();
-    }*/
 }
